@@ -1,0 +1,175 @@
+{
+  "highlights": [
+    {
+      "title": "Brand Identity — Coffee House",
+      "desc": "Complete visual identity system for a specialty coffee brand.",
+      "detail": "Developed the full brand identity including logo, color palette, typography system, packaging, signage, and social media templates.<br><br>Delivered a cohesive brand system that increased brand recognition by 40% within the first quarter of launch.",
+      "image": "assets/media/projects/img/coffee-brand.svg",
+      "video": null,
+      "emoji": "☕",
+      "tech": ["Illustrator", "Photoshop", "InDesign", "After Effects"],
+      "duration": { "from": "2024-01", "to": "2024-03" },
+      "role": "Lead Designer",
+      "designProcess": [
+        { "step": "Research", "desc": "Competitor analysis, mood boards, client interviews" },
+        { "step": "Concept", "desc": "3 initial directions presented to client" },
+        { "step": "Refinement", "desc": "Chosen direction refined through 4 iterations" },
+        { "step": "Delivery", "desc": "Full brand book + all assets delivered" }
+      ],
+      "impacts": [
+        { "label": "Brand Recognition", "desc": "Increased by 40% in first quarter" },
+        { "label": "Deliverables", "desc": "50+ assets including packaging, signage, digital templates" },
+        { "label": "Client Satisfaction", "desc": "Led to 3 additional project referrals" }
+      ]
+    },
+    {
+      "title": "Motion Campaign — TechVision",
+      "desc": "A full motion graphics package for a tech startup's product launch.",
+      "detail": "Designed and animated a comprehensive motion graphics suite for TechVision's flagship product launch — including intro sequences, UI animations, social reels, and presentation templates.",
+      "image": "assets/media/projects/img/techvision.svg",
+      "video": null,
+      "emoji": "🚀",
+      "tech": ["After Effects", "Premiere Pro", "Illustrator", "Figma"],
+      "duration": { "from": "2023-09", "to": "2023-11" },
+      "role": "Motion Designer",
+      "designProcess": [
+        { "step": "Brief", "desc": "Deep dive into brand values and campaign goals" },
+        { "step": "Storyboard", "desc": "Frame-by-frame narrative mapping" },
+        { "step": "Animation", "desc": "Production across 12 deliverable formats" },
+        { "step": "Review", "desc": "Client feedback loops with 2-day turnaround" }
+      ],
+      "impacts": [
+        { "label": "Views", "desc": "2.4M organic views in first month" },
+        { "label": "Assets", "desc": "40+ animated pieces delivered" },
+        { "label": "Award", "desc": "Nominated for Awwwards Site of the Day" }
+      ]
+    }
+  ],
+  "projectCategories": [
+    {
+      "id": "All",
+      "label": "All",
+      "projects": []
+    },
+    {
+      "id": "Branding",
+      "label": "Branding & Identity",
+      "projects": [
+        {
+          "title": "Tech Startup Logo",
+          "desc": "Minimal logo and brand guidelines for a SaaS company.",
+          "detail": "Designed a clean, modern logo mark with comprehensive brand guidelines covering color, typography, and usage rules.",
+          "image": "assets/media/projects/img/tech-logo.svg",
+          "video": null,
+          "emoji": "💡",
+          "tech": ["Illustrator", "Figma"],
+          "duration": { "from": "2024-02", "to": "2024-02" },
+          "role": "Designer"
+        },
+        {
+          "title": "Restaurant Rebrand",
+          "desc": "Full visual identity overhaul for a fine dining establishment.",
+          "detail": "Complete rebrand from menu design to uniforms, signage, and digital presence.",
+          "image": "assets/media/projects/img/restaurant-rebrand.svg",
+          "video": null,
+          "emoji": "🍽️",
+          "tech": ["Illustrator", "Photoshop", "InDesign"],
+          "duration": { "from": "2023-06", "to": "2023-08" },
+          "role": "Lead Designer"
+        },
+        {
+          "title": "Fashion Label Identity",
+          "desc": "Luxury fashion brand visual system and packaging design.",
+          "detail": "Created a sophisticated brand identity emphasizing craftsmanship and exclusivity.",
+          "image": "assets/media/projects/img/fashion-label.svg",
+          "video": null,
+          "emoji": "👗",
+          "tech": ["Illustrator", "Photoshop"],
+          "duration": { "from": "2023-03", "to": "2023-05" },
+          "role": "Designer"
+        }
+      ]
+    },
+    {
+      "id": "Print",
+      "label": "Print & Editorial",
+      "projects": [
+        {
+          "title": "Annual Report 2023",
+          "desc": "Corporate annual report layout with data visualization.",
+          "detail": "Designed a 64-page annual report featuring custom infographics, charts, and editorial photography.",
+          "emoji": "📊",
+          "tech": ["InDesign", "Illustrator"],
+          "duration": { "from": "2023-11", "to": "2023-12" },
+          "role": "Designer"
+        },
+        {
+          "title": "Magazine Spread",
+          "desc": "Editorial design for a lifestyle & culture magazine.",
+          "detail": "Art directed and designed a 12-page feature spread on urban architecture.",
+          "emoji": "📰",
+          "tech": ["InDesign", "Photoshop"],
+          "duration": { "from": "2023-08", "to": "2023-09" },
+          "role": "Art Director"
+        }
+      ]
+    },
+    {
+      "id": "Digital",
+      "label": "Digital & Social",
+      "projects": [
+        {
+          "title": "Social Media Kit",
+          "desc": "Branded social templates for a lifestyle influencer.",
+          "detail": "Created 80+ Canva templates optimized for Instagram, TikTok, and LinkedIn.",
+          "emoji": "📱",
+          "tech": ["Figma", "Canva", "Photoshop"],
+          "duration": { "from": "2024-01", "to": "2024-01" },
+          "role": "Designer"
+        },
+        {
+          "title": "Campaign Banners",
+          "desc": "Display advertising campaign for an e-commerce platform.",
+          "detail": "Designed and animated 30+ responsive banner sizes for Google Display Network.",
+          "emoji": "🖥️",
+          "tech": ["Photoshop", "After Effects"],
+          "duration": { "from": "2023-10", "to": "2023-10" },
+          "role": "Designer"
+        },
+        {
+          "title": "NFT Collection Art",
+          "desc": "Generative character art direction for a 5000-piece NFT drop.",
+          "detail": "Led the art direction for character traits, backgrounds, and rarity tiers.",
+          "emoji": "🎨",
+          "tech": ["Illustrator", "Python"],
+          "duration": { "from": "2022-11", "to": "2023-01" },
+          "role": "Art Director"
+        }
+      ]
+    },
+    {
+      "id": "Illustration",
+      "label": "Illustration & Art",
+      "projects": [
+        {
+          "title": "Children's Book",
+          "desc": "Illustrated a 32-page children's picture book.",
+          "detail": "Developed unique character designs and narrative illustrations across 32 full-color spreads.",
+          "emoji": "📚",
+          "tech": ["Procreate", "Photoshop"],
+          "duration": { "from": "2022-08", "to": "2022-11" },
+          "role": "Illustrator"
+        },
+        {
+          "title": "Icon Set — 200pcs",
+          "desc": "Custom icon system for a SaaS product UI.",
+          "detail": "Designed 200 cohesive icons in 3 styles (outline, filled, duotone) for a design system.",
+          "emoji": "✏️",
+          "tech": ["Illustrator", "Figma"],
+          "duration": { "from": "2023-04", "to": "2023-05" },
+          "role": "Designer"
+        }
+      ]
+    }
+  ]
+}

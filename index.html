@@ -1,0 +1,2999 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Voss — Graphic Designer Portfolio</title>
+  <meta name="description" content="Graphic Designer portfolio specializing in branding, visual identity, and digital design." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alex Voss — Graphic Designer Portfolio" />
+  <meta property="og:description" content="Graphic Designer portfolio specializing in branding, visual identity, and digital design." />
+  <meta property="og:type" content="website" />
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────────
+       CSS VARIABLES — DARK THEME (default)
+    ───────────────────────────────────────────── */
+    :root {
+      --bg: #0b0f41;
+      --bg2: #0c042f;
+      --panel: #1c0a56cc;
+      --panel-solid: #4d33a4;
+      --primary: #ff83f9;
+      --primary-dim: #9a5de4;
+      --secondary: #0a3256;
+      --accent: #ff4b3e;
+      --text: #f4f8ff;
+      --muted: #9fb6c8;
+      --border: #9f0c8ec5;
+      --glow: 0 0 16px #ff83f9aa, 0 0 32px #ff83f944;
+      --glow-sm: 0 0 8px #ff83f988;
+      --card-bg: #110a3a;
+      --input-bg: #0d0628;
+      --nav-bg: #0d062899;
+      --timeline-line: #ff83f944;
+      --pixel-font: 'Press Start 2P', monospace;
+      --heading-font: 'Orbitron', 'Rajdhani', sans-serif;
+      --body-font: 'Barlow Condensed', 'Inter', sans-serif;
+      --transition: 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    [data-theme="light"] {
+      --bg: hsl(321, 77%, 81%);
+      --bg2: #ffffff;
+      --panel: #ec80cd;
+      --panel-solid: #f397d1;
+      --primary: #4962c9;
+      --primary-dim: #ff5dff;
+      --secondary: #944a86;
+      --accent: #e0503a;
+      --text: #1a0d5f;
+      --muted: #ffffff;
+      --border: #880c69f8;
+      --glow: 0 0 12px #ffffff, 0 0 24px #ffe1fc;
+      --glow-sm: 0 0 6px #ffffff;
+      --card-bg: #635fce;
+      --input-bg: #ffffff;
+      --nav-bg: #ffc0ed;
+      --timeline-line: #364c8f44;
+    }
+
+    /* ─────────────────────────────────────────────
+       BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; cursor: none; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+      font-size: 1rem;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background var(--transition), color var(--transition);
+    }
+    a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--text); }
+    h1,h2,h3,h4,h5 {
+      font-family: var(--heading-font);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 900;
+      color: var(--text);
+    }
+    img { max-width: 100%; }
+    ::selection { background: var(--primary); color: #000000; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+    .pixel-font { font-family: var(--pixel-font); }
+
+    /* ─────────────────────────────────────────────
+       CUSTOM CURSOR
+    ───────────────────────────────────────────── */
+    #custom-cursor {
+      position: fixed; top: 0; left: 0; width: 20px; height: 20px;
+      border: 2px solid var(--primary); border-radius: 50%;
+      pointer-events: none; z-index: 99999;
+      transform: translate(-50%,-50%);
+      transition: transform 0.1s, border-color 0.2s, box-shadow 0.2s;
+      box-shadow: var(--glow-sm);
+    }
+    #custom-cursor.hovering {
+      transform: translate(-50%,-50%) scale(1.8);
+      background: var(--primary);
+      opacity: 0.4;
+    }
+
+    /* ─────────────────────────────────────────────
+       LOADING SCREEN
+    ───────────────────────────────────────────── */
+    #loading-screen {
+      position: fixed; inset: 0;
+      background: var(--bg);
+      z-index: 9999;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 24px;
+      transition: opacity 0.6s;
+    }
+    #loading-screen.hidden { opacity: 0; pointer-events: none; }
+    .loading-icon-wrap {
+      font-size: 2.5rem;
+      animation: pulse-glow 1.2s ease-in-out infinite alternate;
+    }
+    .loading-text {
+      font-family: var(--pixel-font);
+      font-size: 0.65rem;
+      color: var(--primary);
+      letter-spacing: 0.2em;
+    }
+    .loading-bar-wrap {
+      width: 220px; height: 6px;
+      background: var(--panel-solid);
+      border: 1px solid var(--border);
+      border-radius: 3px; overflow: hidden;
+    }
+    .loading-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--primary-dim), var(--primary));
+      border-radius: 3px;
+      animation: load-progress 1.8s ease forwards;
+      box-shadow: var(--glow-sm);
+    }
+    @keyframes load-progress { to { width: 100%; } }
+    @keyframes pulse-glow {
+      from { text-shadow: 0 0 8px var(--primary); }
+      to   { text-shadow: 0 0 24px var(--primary), 0 0 48px var(--primary); }
+    }
+
+    /* ─────────────────────────────────────────────
+       PARTICLE CANVAS
+    ───────────────────────────────────────────── */
+    #particle-canvas {
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 0;
+      opacity: 0.5;
+    }
+    [data-theme="light"] #particle-canvas { opacity: 0.2; }
+
+    /* ─────────────────────────────────────────────
+       SECTION UTILITY
+    ───────────────────────────────────────────── */
+    section { position: relative; z-index: 1; padding: 90px 0 70px; }
+    .section-title {
+      font-family: var(--heading-font);
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text);
+      text-shadow: var(--glow-sm);
+      margin-bottom: 0.4rem;
+      position: relative; display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60%; height: 3px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      margin-top: 8px;
+      box-shadow: var(--glow-sm);
+    }
+    .section-header { margin-bottom: 48px; }
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      margin-top: 6px;
+    }
+
+    /* ─────────────────────────────────────────────
+       NAVBAR
+    ───────────────────────────────────────────── */
+    #main-nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      transition: background var(--transition);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+    .nav-brand {
+      font-family: var(--pixel-font);
+      font-size: 0.65rem;
+      color: #ffffff;
+      text-shadow: 0 0 10px #96969688, 0 0 20px #8f8f8f44;
+      letter-spacing: 0.1em;
+      cursor: none;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--heading-font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 6px 12px;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary);
+      border-color: var(--border);
+      box-shadow: var(--glow-sm);
+    }
+    .nav-cv-btn {
+      font-family: var(--heading-font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #000 !important;
+      background: var(--primary);
+      padding: 7px 16px !important;
+      border: none !important;
+      clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+      box-shadow: var(--glow);
+    }
+    .nav-cv-btn:hover { background: #fff; color: #000 !important; }
+    .theme-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      width: 36px; height: 36px;
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: none;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover { background: var(--primary); color: #000; box-shadow: var(--glow); }
+    .hamburger {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      width: 36px; height: 36px;
+      border-radius: 4px;
+      align-items: center; justify-content: center;
+      cursor: none; font-size: 1.1rem;
+    }
+    .mobile-nav {
+      display: none;
+      position: fixed; inset: 62px 0 0 0;
+      background: var(--bg);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center; justify-content: center; gap: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .mobile-nav a:hover { color: var(--primary); text-shadow: var(--glow-sm); }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ─────────────────────────────────────────────
+       HUD / CYBERPUNK DECORATORS
+    ───────────────────────────────────────────── */
+    .hud-bracket {
+      position: absolute;
+      width: 20px; height: 20px;
+      border-color: var(--primary);
+      border-style: solid;
+      opacity: 0.6;
+    }
+    .hud-bracket.tl { top: 0; left: 0; border-width: 2px 0 0 2px; }
+    .hud-bracket.tr { top: 0; right: 0; border-width: 2px 2px 0 0; }
+    .hud-bracket.bl { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+    .hud-bracket.br { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+    /* ─────────────────────────────────────────────
+       CYBERPUNK BUTTON
+    ───────────────────────────────────────────── */
+    .btn-cyber {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--heading-font);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #000;
+      background: linear-gradient(135deg, var(--primary-dim), var(--primary));
+      border: none;
+      padding: 10px 24px;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      cursor: none;
+      box-shadow: var(--glow);
+      transition: all 0.2s;
+      position: relative;
+    }
+    .btn-cyber::before {
+      content: '';
+      position: absolute; top: 2px; left: 4px; right: 4px; height: 1px;
+      background: rgba(255,255,255,0.5);
+    }
+    .btn-cyber:hover { transform: translateY(-2px); box-shadow: var(--glow), 0 8px 24px rgba(0,0,0,0.3); color: #000; }
+    .btn-cyber-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--heading-font);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: transparent;
+      border: 1px solid var(--primary);
+      padding: 10px 24px;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+      cursor: none;
+      transition: all 0.2s;
+    }
+    .btn-cyber-outline:hover {
+      background: var(--primary); color: #000;
+      box-shadow: var(--glow); transform: translateY(-2px);
+    }
+
+    /* ─────────────────────────────────────────────
+       CYBER CARD
+    ───────────────────────────────────────────── */
+    .cyber-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+      padding: 20px;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .cyber-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--glow);
+      transform: translateY(-4px);
+    }
+
+    /* ─────────────────────────────────────────────
+       HERO SECTION
+    ───────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding-top: 100px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg-art {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, #1c0a5600 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 20% 80%, #ff4b3e00 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, #002c5a00 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, #460d7a 100%);
+      z-index: 0;
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--primary)08 1px, transparent 1px),
+        linear-gradient(90deg, var(--primary)08 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: 0;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+    }
+    .hero-content { position: relative; z-index: 2; }
+    .hero-eyebrow {
+      font-family: var(--pixel-font);
+      font-size: 0.5rem;
+      color: var(--primary);
+      letter-spacing: 0.3em;
+      margin-bottom: 16px;
+      opacity: 0.8;
+    }
+    .hero-name {
+      font-family: var(--heading-font);
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      text-shadow: 0 0 40px var(--primary)33, 0 4px 16px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+    }
+    .hero-name span { color: var(--primary); text-shadow: var(--glow); }
+    .hero-tagline {
+      font-family: var(--heading-font);
+      font-size: clamp(1rem, 2.5vw, 1.6rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 36px;
+      min-height: 2em;
+    }
+    .typing-cursor {
+      display: inline-block;
+      width: 3px; height: 1.1em;
+      background: var(--primary);
+      vertical-align: middle;
+      margin-left: 3px;
+      animation: blink 0.8s step-end infinite;
+      box-shadow: var(--glow-sm);
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
+    .hero-scroll-hint {
+      position: absolute; bottom: 32px; left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--pixel-font);
+      font-size: 0.4rem;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      text-align: center;
+      opacity: 0.7;
+    }
+    .scroll-arrow {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-top: 8px;
+      animation: bounce 1.4s ease-in-out infinite;
+      text-align: center;
+    }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+
+    /* RPG Stats */
+    .stats-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+    .stat-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex; flex-direction: column; align-items: center;
+      min-width: 110px;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      position: relative;
+      transition: all 0.3s;
+    }
+    .stat-card:hover { border-color: var(--primary); box-shadow: var(--glow); }
+    .stat-icon { font-size: 1.4rem; margin-bottom: 4px; }
+    .stat-value {
+      font-family: var(--pixel-font);
+      font-size: 0.85rem;
+      color: var(--primary);
+      text-shadow: var(--glow-sm);
+      margin-bottom: 3px;
+    }
+    .stat-label {
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ─────────────────────────────────────────────
+       HIGHLIGHTS SECTION
+    ───────────────────────────────────────────── */
+    #highlights { background: var(--bg2); }
+    .highlight-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 60px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .highlight-item:nth-child(even) { direction: rtl; }
+    .highlight-item:nth-child(even) > * { direction: ltr; }
+    .highlight-media {
+      position: relative; overflow: hidden;
+      min-height: 320px;
+      background: #000;
+    }
+    .highlight-media img, .highlight-media video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.4s;
+    }
+    .highlight-media video { position: absolute; inset: 0; opacity: 0; }
+    .highlight-media:hover video { opacity: 1; }
+    .highlight-media:hover img { opacity: 0; }
+    .highlight-media .media-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--primary)10, transparent);
+      pointer-events: none;
+    }
+    .highlight-info {
+      background: var(--panel);
+      padding: 36px 40px;
+      display: flex; flex-direction: column; justify-content: center;
+      border-left: 2px solid var(--border);
+    }
+    .highlight-item:nth-child(even) .highlight-info { border-left: none; border-right: 2px solid var(--border); }
+    .highlight-tag {
+      font-family: var(--pixel-font);
+      font-size: 0.4rem;
+      color: var(--primary);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .highlight-title {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .highlight-desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; }
+    .tech-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px; }
+    .tech-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      clip-path: polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);
+    }
+    @media (max-width: 768px) {
+      .highlight-item, .highlight-item:nth-child(even) {
+        grid-template-columns: 1fr; direction: ltr;
+      }
+      .highlight-media { min-height: 220px; }
+      .highlight-info { border-left: none !important; border-right: none !important; border-top: 2px solid var(--border); }
+    }
+
+    /* ─────────────────────────────────────────────
+       ABOUT SECTION
+    ───────────────────────────────────────────── */
+    #about { background: var(--bg); }
+    .about-avatar-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .about-avatar {
+      width: 100%; max-width: px;
+      aspect-ratio: 8/8;
+      object-fit: cover;
+      border: none;
+      display: block;
+      clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+      filter: saturate(0.85) contrast(1.1);
+      transition: filter 0.3s;
+    }
+    .about-avatar:hover { filter: saturate(1.1) contrast(1.05); box-shadow: var(--glow); }
+    .about-avatar-deco {
+      position: absolute; inset: -8px;
+      border: 0px solid var(--primary);
+      opacity: 0.3;
+      clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+      pointer-events: none;
+    }
+    .about-text h2 { margin-bottom: 20px; }
+    .about-desc { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 28px; }
+    .about-quote {
+      font-family: var(--pixel-font);
+      font-size: 0.5rem;
+      line-height: 2;
+      color: var(--primary);
+      border-left: 3px solid var(--primary);
+      padding-left: 20px;
+      margin-top: 24px;
+      text-shadow: var(--glow-sm);
+    }
+    .about-scan-line {
+      position: absolute; bottom: 20px; right: 20px;
+      font-family: var(--pixel-font);
+      font-size: 0.35rem;
+      color: var(--primary);
+      opacity: 0.4;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─────────────────────────────────────────────
+       SKILLS SECTION
+    ───────────────────────────────────────────── */
+    #skills { background: var(--bg2); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 768px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .skills-grid { grid-template-columns: 1fr; } }
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 24px 20px;
+      position: relative;
+      clip-path: polygon(10px 0%,100% 0%,100% calc(100% - 10px),calc(100% - 10px) 100%,0% 100%,0% 10px);
+      transition: all 0.3s;
+    }
+    .skill-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--glow);
+      transform: translateY(-4px);
+    }
+    .skill-icon {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+      text-shadow: var(--glow-sm);
+    }
+    .skill-title {
+      font-family: var(--pixel-font);
+      font-size: 0.45rem;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+    }
+    .skill-desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 16px; }
+    .skill-bar-wrap {
+      height: 4px;
+      background: var(--panel-solid);
+      border-radius: 2px; overflow: hidden;
+    }
+    .skill-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--primary-dim), var(--primary));
+      border-radius: 2px;
+      box-shadow: var(--glow-sm);
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+    .skills-pagination { display: flex; gap: 8px; justify-content: center; margin-top: 32px; }
+    .page-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--panel-solid);
+      border: 1px solid var(--border);
+      cursor: none;
+      transition: all 0.2s;
+    }
+    .page-dot.active { background: var(--primary); box-shadow: var(--glow-sm); }
+
+    /* ─────────────────────────────────────────────
+       PROJECTS SECTION
+    ───────────────────────────────────────────── */
+    #projects { background: var(--bg); }
+    .projects-filter {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .filter-btn {
+      font-family: var(--heading-font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 7px 16px;
+      clip-path: polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+      cursor: none;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      color: var(--primary);
+      border-color: var(--primary);
+      box-shadow: var(--glow-sm);
+    }
+    .filter-btn.active { background: var(--primary)22; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      transition: opacity 0.3s;
+    }
+    @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 500px) { .projects-grid { grid-template-columns: 1fr; } }
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .project-card:hover { box-shadow: var(--glow); transform: translateY(-4px); }
+    .project-thumb {
+      position: relative; overflow: hidden;
+      min-height: 180px; background: var(--panel-solid);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .project-thumb img, .project-thumb video {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center; display: block;
+      transition: opacity 0.4s, transform 0.4s;
+      transform: scale(1);
+    }
+    .project-thumb img { background: var(--panel); }
+    .project-thumb video { position: absolute; inset: 0; opacity: 0; object-fit: cover; }
+    .project-card:hover .project-thumb video { opacity: 1; }
+    .project-thumb:hover img { transform: scale(1.08); }
+    .project-thumb-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--card-bg) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .project-body { padding: 16px; }
+    .project-title {
+      font-family: var(--heading-font);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .project-desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 12px; line-height: 1.5; }
+    .project-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .projects-pagination { display: flex; gap: 8px; justify-content: center; margin-top: 32px; }
+    .page-btn {
+      font-family: var(--heading-font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--muted);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      cursor: none;
+      transition: all 0.2s;
+    }
+    .page-btn:hover, .page-btn.active { color: var(--primary); border-color: var(--primary); box-shadow: var(--glow-sm); }
+
+    /* ─────────────────────────────────────────────
+       PROJECT MODAL
+    ───────────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: #00000088;
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      max-width: min(95vw, 1200px);
+      width: auto;
+      max-height: min(95vh, 1000px);
+      overflow: auto;
+      position: relative;
+      clip-path: polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
+      transform: scale(0.9);
+      transition: transform 0.3s;
+    }
+    .modal-overlay.open .modal-box { transform: scale(1); }
+    .modal-close {
+      position: sticky; top: 0; left: 0;
+      width: 100%; height: 48px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 24px;
+      z-index: 10;
+    }
+    .modal-close-btn {
+      background: transparent; border: 1px solid var(--border);
+      color: var(--primary); width: 32px; height: 32px;
+      border-radius: 2px; cursor: none;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    .modal-close-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .modal-title-bar {
+      font-family: var(--heading-font);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--primary);
+    }
+    .modal-body { padding: 28px; }
+    .modal-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.8fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .modal-main-panel {
+      display: grid;
+      gap: 16px;
+      min-width: 0;
+    }
+    .modal-side-panel {
+      display: grid;
+      gap: 12px;
+      min-width: 0;
+    }
+    .modal-side-title {
+      font-family: var(--heading-font);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+    .modal-selected-image {
+      display: grid;
+      gap: 12px;
+    }
+    .selected-image-frame {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      min-height: 0;
+    }
+    .selected-image-frame img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .selected-image-frame:hover img {
+      transform: scale(1.08);
+    }
+    .selected-image-caption {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      padding: 0 6px;
+    }
+    .modal-gallery-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 70vh;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+    .modal-gallery-wrap .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+      padding: 0;
+    }
+    .modal-gallery-wrap .gallery-item img {
+      width: 100%;
+      height: 100%;
+      min-height: 120px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .modal-gallery-wrap .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+    .modal-gallery-wrap .gallery-item.active {
+      box-shadow: 0 0 0 2px rgba(255, 131, 249, 0.2);
+      transform: translateY(-2px);
+    }
+    .modal-gallery-wrap .img-placeholder {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-height: 0;
+      border-radius: 14px;
+      background: var(--panel);
+      color: var(--text);
+    }
+    @media (max-width: 900px) {
+      .modal-split { grid-template-columns: 1fr; }
+      .modal-gallery-wrap { max-height: none; } 
+    }
+    .modal-meta { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .meta-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 5px 14px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .modal-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px; }
+    .modal-section-title {
+      font-family: var(--heading-font);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    /* Gameplay link button inside thumbnails */
+    .gallery-play-link {
+      position: absolute;
+      right: 8px; top: 8px;
+      background: rgba(0,0,0,0.6);
+      color: #fff; padding: 6px 10px;
+      border-radius: 8px; font-size: 0.8rem;
+      text-decoration: none; display: inline-flex; gap:6px; align-items:center;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .gallery-play-link:hover { background: var(--primary); color: #000; }
+
+    /* Selected play button under the large image */
+    .selected-play-btn {
+      display: inline-block;
+      margin-top: 6px;
+      background: var(--primary);
+      color: #000;
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .selected-play-btn.hidden { display: none; }
+    .image-lightbox-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px; z-index: 2100; opacity: 0; pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .image-lightbox-overlay.open { opacity: 1; pointer-events: all; }
+    .image-lightbox-box {
+      position: relative;
+      width: auto;
+      height: auto;
+      max-width: min(95vw, 1700px);
+      max-height: min(95vh, 1900px);
+      display: inline-flex; align-items: center; justify-content: center;
+      background: rgb(0, 0, 0);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
+    .image-lightbox-box img {
+      width: auto;
+      height: auto;
+      max-width: 100%; max-height: 100%;
+      object-fit: contain; display: block;
+    }
+    .image-lightbox-close {
+      position: absolute; top: 12px; right: 12px;
+      width: 38px; height: 38px; border: 0; border-radius: 50%;
+      background: rgba(0,0,0,0.7); color: #fff; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center; cursor: none;
+    }
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fill,minmax(160px,1fr)); gap: 12px; margin-bottom: 24px; }
+    .process-step {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 14px;
+      font-size: 0.82rem;
+    }
+    .process-step-label {
+      font-family: var(--heading-font);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+    .impact-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .impact-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--panel);
+      border: 1px solid var(--border); padding: 12px;
+    }
+    .impact-label {
+      font-weight: 700; color: var(--primary);
+      font-size: 0.85rem; min-width: 130px;
+      font-family: var(--heading-font);
+      letter-spacing: 0.06em;
+    }
+    .impact-desc { color: var(--muted); font-size: 0.85rem; }
+
+    /* ─────────────────────────────────────────────
+       EXPERIENCE TIMELINE
+    ───────────────────────────────────────────── */
+    #experience { background: var(--bg2); }
+    .timeline-wrap {
+      position: relative;
+      padding: 20px 0;
+    }
+    .timeline-line {
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+      transform: translateX(-50%);
+      box-shadow: var(--glow-sm);
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 0; margin-bottom: 48px;
+      position: relative;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-content {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 24px;
+      position: relative;
+      clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+      transition: all 0.3s;
+    }
+    .timeline-content:hover { border-color: var(--primary); box-shadow: var(--glow); }
+    .timeline-item:nth-child(odd) .timeline-content { grid-column: 1; grid-row: 1; text-align: right; }
+    .timeline-item:nth-child(odd) .timeline-content .tech-tags { justify-content: flex-end; }
+    .timeline-item:nth-child(even) .timeline-content { grid-column: 3; grid-row: 1; }
+    .timeline-item:nth-child(odd) .timeline-dot-wrap { grid-column: 2; grid-row: 1; }
+    .timeline-item:nth-child(even) .timeline-dot-wrap { grid-column: 2; grid-row: 1; }
+    .timeline-dot-wrap {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .timeline-dot {
+      width: 14px; height: 14px;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: var(--glow);
+      flex-shrink: 0;
+    }
+    .timeline-period {
+      font-family: var(--pixel-font);
+      font-size: 0.4rem;
+      color: var(--primary);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      text-shadow: var(--glow-sm);
+    }
+    .timeline-role {
+      font-family: var(--heading-font);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+    .timeline-company {
+      font-size: 0.85rem; color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .timeline-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+    @media (max-width: 768px) {
+      .timeline-line { left: 20px; }
+      .timeline-item {
+        grid-template-columns: 40px 1fr;
+        grid-template-rows: auto;
+      }
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        grid-column: 2; grid-row: 1;
+        text-align: left;
+      }
+      .timeline-item:nth-child(odd) .timeline-content .tech-tags,
+      .timeline-item:nth-child(even) .timeline-content .tech-tags { justify-content: flex-start; }
+      .timeline-item:nth-child(odd) .timeline-dot-wrap,
+      .timeline-item:nth-child(even) .timeline-dot-wrap { grid-column: 1; grid-row: 1; }
+    }
+
+    /* ─────────────────────────────────────────────
+       CONTACT SECTION
+    ───────────────────────────────────────────── */
+    #contact { background: var(--bg); }
+    .contact-form {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-label {
+      display: block;
+      font-family: var(--pixel-font);
+      font-size: 0.4rem;
+      color: var(--primary);
+      letter-spacing: 0.2em;
+      margin-bottom: 8px;
+    }
+    .cyber-input {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--body-font);
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      outline: none;
+      transition: all 0.2s;
+      resize: vertical;
+      border-radius: 0;
+      clip-path: polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+    }
+    .cyber-input:focus {
+      border-color: var(--primary);
+      box-shadow: var(--glow-sm);
+    }
+    .cyber-input::placeholder { color: var(--muted); opacity: 0.6; }
+    .contact-success {
+      display: none;
+      font-family: var(--pixel-font);
+      font-size: 0.5rem;
+      color: var(--primary);
+      text-align: center;
+      padding: 20px;
+      border: 1px solid var(--border);
+      margin-top: 16px;
+      letter-spacing: 0.1em;
+      line-height: 2;
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 36px 24px;
+      text-align: center;
+      position: relative; z-index: 1;
+    }
+    .footer-socials { display: flex; gap: 12px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+    .footer-social-link {
+      width: 40px; height: 40px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--muted);
+      transition: all 0.2s;
+      clip-path: polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+    }
+    .footer-social-link:hover { color: var(--primary); border-color: var(--primary); box-shadow: var(--glow-sm); background: var(--panel); }
+    .footer-copy {
+      font-size: 0.82rem; color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* ─────────────────────────────────────────────
+       SCROLL REVEAL ANIMATIONS
+    ───────────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s, transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    .reveal.from-left { transform: translateX(-40px); }
+    .reveal.from-right { transform: translateX(40px); }
+    .reveal.scale-up { transform: scale(0.92); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+    .stagger-6 { transition-delay: 0.6s; }
+
+    /* ─────────────────────────────────────────────
+       PLACEHOLDER AVATAR (gradient)
+    ───────────────────────────────────────────── */
+    .avatar-placeholder {
+      width: 100%; max-width: 300px;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--panel-solid), var(--card-bg));
+      border: 2px solid var(--border);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+      position: relative; overflow: hidden;
+    }
+    .avatar-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--primary)10, var(--accent)10);
+    }
+    .avatar-placeholder i { font-size: 5rem; color: var(--primary); opacity: 0.5; }
+
+    /* ─────────────────────────────────────────────
+       PLACEHOLDER IMAGES (for demo)
+    ───────────────────────────────────────────── */
+    .img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      background: linear-gradient(135deg, var(--panel-solid) 0%, var(--card-bg) 100%);
+    }
+    .img-placeholder i { font-size: 2.5rem; color: var(--primary); opacity: 0.5; }
+    .img-placeholder span { font-family: var(--heading-font); font-weight: 700; }
+
+    /* ─────────────────────────────────────────────
+       MISC
+    ───────────────────────────────────────────── */
+    .neon-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      margin: 0; border: none;
+      box-shadow: var(--glow-sm);
+    }
+    .section-num {
+      font-family: var(--pixel-font);
+      font-size: 0.38rem;
+      color: var(--primary);
+      opacity: 0.5;
+      letter-spacing: 0.2em;
+      margin-bottom: 6px;
+    }
+
+    /* Scrollbar styling in modal */
+    .modal-box::-webkit-scrollbar { width: 4px; }
+    .modal-box::-webkit-scrollbar-track { background: var(--bg); }
+    .modal-box::-webkit-scrollbar-thumb { background: var(--primary); }
+
+    /* Skills slide animation */
+    .skills-page { transition: opacity 0.3s, transform 0.3s; }
+    .skills-page.slide-out { opacity: 0; transform: translateX(-30px); }
+
+    /* No results */
+    .no-projects {
+      grid-column: 1/-1;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 40px;
+    }
+    .no-projects i { font-size: 2.5rem; display: block; margin-bottom: 12px; color: var(--border); }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ CUSTOM CURSOR -->
+<div id="custom-cursor"></div>
+
+<!-- ═══════════════════════════════════════════ PARTICLE CANVAS -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- ═══════════════════════════════════════════ LOADING SCREEN -->
+<div id="loading-screen">
+  <div class="loading-icon-wrap">🎨</div>
+  <div class="loading-text">Initializing Portfolio...</div>
+  <div class="loading-bar-wrap"><div class="loading-bar"></div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════ NAVBAR -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <div class="nav-brand" id="nav-brand">AV.DESIGN</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" class="nav-cv-btn" id="nav-cv">View CV</a></li>
+    </ul>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+        <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+      </button>
+      <button class="hamburger" id="hamburger"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav"></div>
+
+<!-- ═══════════════════════════════════════════ HERO -->
+<section id="hero">
+  <div class="hero-bg-art"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="container hero-content">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <div class="hero-eyebrow reveal">◆ PORTFOLIO / 2025 ◆</div>
+        <h1 class="hero-name reveal stagger-1">
+          Hi, I'm<br><span id="hero-name">Alex Voss</span>
+        </h1>
+        <div class="hero-tagline reveal stagger-2">
+          <span id="typing-text"></span><span class="typing-cursor"></span>
+        </div>
+        <div class="hero-btns reveal stagger-3">
+          <a href="#highlights" class="btn-cyber"><i class="bi bi-eye-fill"></i> View My Work</a>
+          <a href="#" class="btn-cyber-outline" id="hero-cv-btn"><i class="bi bi-file-earmark-person-fill"></i> View CV</a>
+        </div>
+        <div class="stats-row reveal stagger-4" id="stats-row"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    PRESS ▼ TO CONTINUE
+    <span class="scroll-arrow">▼</span>
+  </div>
+</section>
+
+<hr class="neon-divider">
+
+<!-- ═══════════════════════════════════════════ ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-4 text-center text-lg-start reveal from-left">
+        <div class="about-avatar-wrap d-inline-block position-relative">
+          <img src="ava.png" alt="Alex Voss avatar" class="about-avatar" />
+          <div class="about-avatar-deco"></div>
+          <div class="about-scan-line">ID // AV_2025</div>
+        </div>
+      </div>
+      <div class="col-lg-8 reveal from-right">
+        <div class="section-num">// 01</div>
+        <h2 class="section-title" id="title-about">About Me</h2>
+        <div class="about-desc" id="about-desc"></div>
+        <div class="hero-btns">
+          <a href="#" class="btn-cyber" id="about-cv-btn"><i class="bi bi-download"></i> Download CV</a>
+          <a href="#contact" class="btn-cyber-outline"><i class="bi bi-chat-dots-fill"></i> Get In Touch</a>
+        </div>
+        <div class="about-quote" id="about-quote"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="neon-divider">
+
+<!-- ═══════════════════════════════════════════ HIGHLIGHTS -->
+<section id="highlights">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">// 02</div>
+      <h2 class="section-title" id="title-highlights">Featured Work</h2>
+      <p class="section-sub">Selected projects that define my craft</p>
+    </div>
+    <div id="highlights-wrap"></div>
+  </div>
+</section>
+
+<hr class="neon-divider">
+
+<!-- ═══════════════════════════════════════════ SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">// 03</div>
+      <h2 class="section-title" id="title-skills">Skills &amp; Expertise</h2>
+      <p class="section-sub">Tools of the trade</p>
+    </div>
+    <div class="skills-grid skills-page" id="skills-grid"></div>
+    <div class="skills-pagination" id="skills-pagination"></div>
+  </div>
+</section>
+
+<hr class="neon-divider">
+
+<!-- ═══════════════════════════════════════════ PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">// 04</div>
+      <h2 class="section-title" id="title-projects">Projects</h2>
+      <p class="section-sub">Explore the full body of work</p>
+    </div>
+    <div class="projects-filter" id="projects-filter"></div>
+    <div class="projects-grid" id="projects-grid"></div>
+    <div class="projects-pagination" id="projects-pagination"></div>
+  </div>
+</section>
+
+<hr class="neon-divider">
+
+<!-- ═══════════════════════════════════════════ CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal text-center">
+      <div class="section-num">// 06</div>
+      <h2 class="section-title" id="title-contact">Get In Touch</h2>
+      <p class="section-sub">Let's create something unforgettable together</p>
+    </div>
+    <div class="contact-form reveal">
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="c-name">YOUR NAME</label>
+          <input type="text" id="c-name" name="name" class="cyber-input" placeholder="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="c-email">EMAIL ADDRESS</label>
+          <input type="email" id="c-email" name="email" class="cyber-input" placeholder="john@example.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="c-msg">MESSAGE</label>
+          <textarea id="c-msg" name="message" class="cyber-input" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn-cyber w-100" style="justify-content:center;">
+          <i class="bi bi-send-fill"></i> SEND MESSAGE
+        </button>
+        <div class="contact-success" id="contact-success">
+          ✓ MESSAGE RECEIVED<br>I'll get back to you within 24 hours.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FOOTER -->
+<footer id="footer">
+  <div class="footer-socials" id="footer-socials"></div>
+  <p class="footer-copy" id="footer-copy"></p>
+</footer>
+
+<!-- ═══════════════════════════════════════════ PROJECT MODAL -->
+<div class="modal-overlay" id="project-modal">
+  <div class="modal-box" id="modal-box">
+    <div class="modal-close">
+      <span class="modal-title-bar" id="modal-title-bar">PROJECT DETAIL</span>
+      <button class="modal-close-btn" id="modal-close-btn"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="image-lightbox-overlay" id="image-lightbox-overlay">
+  <div class="image-lightbox-box">
+    <button class="image-lightbox-close" id="image-lightbox-close" aria-label="Close image"><i class="bi bi-x-lg"></i></button>
+    <img id="image-lightbox-img" src="" alt="" />
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   DATA
+═══════════════════════════════════════════════════════════ */
+const PROFILE = {
+  hero: {
+    name: "Uyen Nguyen",
+    tagline: "Creative Designer | Visual Storyteller",
+    cta: "View My Work"
+  },
+  stats: [
+    { icon: "🎨", value: "auto", label: "Years EXP", startDate: "2019-06" },
+    { icon: "📁", value: "80+", label: "Projects Done" },
+    { icon: "🤝", value: "45+", label: "Clients Served" },
+    { icon: "🏆", value: "12", label: "Awards Won" }
+  ],
+  about: {
+    description: "I'm a <strong style='color:var(--primary)'>Senior Graphic Designer</strong> with 5+ years of experience transforming ideas into powerful visual identities. I specialize in brand strategy, visual storytelling, and crafting design systems that resonate deeply with audiences.<br><br>My work spans branding, editorial design, motion graphics, and digital experiences — always with an obsessive eye for detail and a passion for clean, purposeful aesthetics.",
+    cvLink: "#",
+    quote: "Design is not just what it looks like — it's how it makes you feel."
+  },
+  skills: [
+    { icon: "bi-palette-fill", title: "Branding & Identity", desc: "Logo design, brand guidelines, visual systems", level: 95 },
+    { icon: "bi-fonts", title: "Typography", desc: "Type pairing, custom lettering, hierarchy", level: 90 },
+    { icon: "bi-layout-text-window-reverse", title: "Layout Design", desc: "Editorial, print, multi-page documents", level: 88 },
+    { icon: "bi-brush-fill", title: "Illustration", desc: "Digital illustration, icon sets, infographics", level: 82 },
+    { icon: "bi-image-fill", title: "Photo Editing", desc: "Retouching, compositing, color grading", level: 85 },
+    { icon: "bi-film", title: "Motion Graphics", desc: "Animated logos, social media content", level: 78 },
+    { icon: "bi-printer-fill", title: "Print Design", desc: "Packaging, posters, business cards", level: 92 },
+    { icon: "bi-phone-fill", title: "UI/UX Design", desc: "Wireframes, prototypes, Figma systems", level: 80 },
+    { icon: "bi-camera-video-fill", title: "Video Production", desc: "Brand films, reels, social content", level: 72 }
+  ],
+  timeline: [
+    {
+      period: "2023 – Present",
+      role: "Senior Graphic Designer",
+      company: "Neon Studio — Creative Agency",
+      desc: "Leading brand identity projects for global clients, mentoring a team of 4 junior designers, and managing end-to-end visual campaigns across print and digital."
+    },
+    {
+      period: "2021 – 2023",
+      role: "Graphic Designer",
+      company: "Pixel & Ink Design Studio",
+      desc: "Created visual identities, packaging systems, and digital assets for 30+ clients across FMCG, tech, and lifestyle sectors."
+    },
+    {
+      period: "2019 – 2021",
+      role: "Junior Designer",
+      company: "Freelance & Self-Practice",
+      desc: "Built a freelance portfolio through logo design, social media graphics, print materials, and brand consulting for local businesses."
+    }
+  ],
+  socials: [
+    { icon: "bi-behance", link: "https://behance.net/" },
+    { icon: "bi-dribbble", link: "https://dribbble.com/" },
+    { icon: "bi-instagram", link: "https://instagram.com/" },
+    { icon: "bi-linkedin", link: "https://linkedin.com/" },
+    { icon: "bi-envelope-fill", link: "Uyenmy193@gmail.com" }
+  ]
+};
+
+const PROJECTS_DATA = {
+  highlights: [
+    {
+      title: "Winning Creative",
+      desc: "A complete visual identity system built for a specialty coffee brand entering the premium market.",
+      detail: "Developed the full brand identity including logo, color palette, typography system, packaging, signage, and social media templates.<br><br>The brand story centers around the aurora borealis as a metaphor for rare, radiant moments — perfectly mirroring the coffee experience. Every element reinforces warmth, craftsmanship, and premium quality.",
+      image: "assets/media/projects/img/coffee-brand.svg",
+      image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+      techColor: "#e8a87c",
+      tech: ["Illustrator", "Photoshop", "InDesign", "After Effects"],
+      duration: { from: "2024-01", to: "2024-03" },
+      role: "Lead Designer",
+      designProcess: [
+        { step: "Discovery", desc: "Competitor analysis, mood boards, and client workshops" },
+        { step: "Concept", desc: "3 distinct brand directions presented to stakeholders" },
+        { step: "Refinement", desc: "Chosen direction polished across 5 iteration rounds" },
+        { step: "Delivery", desc: "Complete brand book + 60+ production-ready assets" }
+      ],
+      impacts: [
+        { label: "Brand Recognition", desc: "40% increase in brand awareness within first quarter" },
+        { label: "Deliverables", desc: "60+ assets including packaging, signage, digital templates" },
+        { label: "Client Impact", desc: "Led to 4 additional project referrals in 3 months" }
+      ]
+    },
+    {
+      title: "Ai workflow",
+      desc: "Art direction and layout design for a 120-page luxury lifestyle publication.",
+      detail: "Took the role of Art Director for a 120-page luxury lifestyle magazine — handling typography system, grid architecture, photo editing direction, and all editorial layouts.<br><br>The design language draws from brutalism and fashion editorial aesthetics, creating a publication that feels both authoritative and provocative.",
+      image: "assets/media/projects/img/fashion-label.svg",
+      images: ["assets/media/projects/img/fashion-label.svg"],
+      tech: ["InDesign", "Photoshop", "Lightroom", "Illustrator"],
+      duration: { from: "2024-04", to: "2024-07" },
+      role: "Art Director",
+      designProcess: [
+        { step: "Research", desc: "Analyzed 40+ luxury publications for design benchmarks" },
+        { step: "Grid System", desc: "Built a modular 12-column editorial grid from scratch" },
+        { step: "Typography", desc: "Custom type hierarchy with 4 paired font families" },
+        { step: "Production", desc: "CMYK print-ready 300dpi files for 120 pages" }
+      ],
+      impacts: [
+        { label: "Page Count", desc: "120 pages fully designed in 10 weeks" },
+        { label: "Print Run", desc: "First issue sold 3,000 copies across 5 cities" },
+        { label: "Recognition", desc: "Shortlisted for Design Week Editorial Award 2024" }
+      ]
+    },
+    {
+      title: "Creative strategy",
+      desc: "Complete UX/UI design system for a fintech mobile platform.",
+      detail: "Designed a comprehensive digital design system for a fintech application, encompassing user research, wireframing, high-fidelity mockups, and interactive prototypes.<br><br>The design philosophy emphasizes clarity, accessibility, and trust — essential elements for managing sensitive financial interactions on mobile devices.",
+      image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+      images: ["assets/media/projects/img/fintech-app.svg"],
+      tech: ["Figma", "Protopie", "Adobe XD", "Illustrator"],
+      duration: { from: "2024-08", to: "2024-12" },
+      role: "Lead UX/UI Designer",
+      designProcess: [
+        { step: "Research", desc: "User interviews and competitive analysis of 15+ fintech apps" },
+        { step: "Wireframing", desc: "Low-fidelity flows mapping 8 core user journeys" },
+        { step: "Design System", desc: "Component library with 120+ reusable elements" },
+        { step: "Handoff", desc: "Interactive prototypes and developer specifications" }
+      ],
+      impacts: [
+        { label: "Component Library", desc: "120+ UI components reducing design-to-dev time by 40%" },
+        { label: "User Adoption", desc: "New design system adopted across 3 product teams" },
+        { label: "Performance", desc: "25% improvement in user task completion rates" }
+      ]
+    }
+  ],
+  projectCategories: [
+    {
+      id: "PI",
+      label: "Magic Tile 3",
+      projects: [
+        {
+          title: "PI_Promotional Banner",
+          desc: "Minimal logo and brand guidelines for a B2B SaaS company.",
+          detail: "Designed a clean, modular logo mark built on geometric precision — communicating flow, connectivity, and speed.",
+          image: "PI/260302_PI_GL_PB_MontagemMiau_1920x1080 1.jpg",
+          galleryImages: [
+            "PI/250423_PI_GL_PBNA_FE0Lay0SSi0FreshPromo0HUSN_1920x1080 1.jpg",
+            "PI/250424_PI_GL_PBNA_FE0Lay0SSi0FreshPromo0Demon_1920x1080 1.jpg",
+            "PI/250809_PI_GL_PB_RhythmAdventure0TilesCharacter 1.jpg",
+            "PI/250723_PI_GL_PB_Aiscream0kawaii_1920x1080 1.jpg",
+            "PI/250820_PI_GL_PB_Cathoven_1920x1080 1.jpg",
+            "PI/251028_PI_GL_PB_ThanksGiving_1920x1080 1.jpg",
+            "PI/251120_PI_GL_PB_WinterPass_1920x1080 1.jpg",
+            "PI/260114_PI_GL_PB_Whiplash_1920x1080 1.jpg",
+            "PI/260310_PI_GL_PB_JasracAlbum_1920x1080 1.jpg",
+            "PI/260210_PI_GL_PB_WomenDay_1920x1080 1.jpg",
+            "PI/260302_PI_GL_PB_MontagemMiau_1920x1080 1.jpg",
+            "PI/260406_PI_GL_PB_NobatidaoFunk_1920x1080 1.jpg",
+            "PI/260511_PI_GL_PB_RhythmMarch0Jungle_1920x1080 1.jpg",
+
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Figma"],
+          duration: { from: "2024-02", to: "2024-02" },
+          role: "Brand Designer",
+          designProcess: [
+            { step: "Brief", desc: "Client workshops and competitor landscape analysis" },
+            { step: "Sketching", desc: "20+ rough concepts refined to 5 directions" },
+            { step: "Digital", desc: "3 polished options with color variants" },
+            { step: "Handoff", desc: "Full brand kit with usage guidelines" }
+          ]
+        },
+        {
+          title: "PI_Screenshot",
+          desc: "Holistic wellness brand — logo, packaging, and brand voice.",
+          detail: "A pastel-forward wellness brand identity balancing scientific credibility with warm, approachable aesthetics.",
+          image: "PI/260302_PI_GL_PB_MontagemMiau_1920x1080 1.jpg",
+          galleryImages: [
+            "PI/250819_PI_JP_S_Colorful0Aiscream2.png",
+            "PI/260121_PI_GL_S_Valentine0PhonkTop1Creative.png",
+            "PI/260121_PI_GL_S_Valentine0PhonkTop1Creative.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "PI_Ads Banner",
+          desc: "Full rebrand for a premium architecture firm.",
+          detail: "Elevated a 20-year-old architecture studio brand from dated to bold — keeping heritage cues while projecting forward-thinking design.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "InDesign", "Figma"],
+          duration: { from: "2023-06", to: "2023-08" },
+          role: "Brand Strategist + Designer",
+          designProcess: [
+            { step: "Audit", desc: "Brand audit of existing identity and positioning" },
+            { step: "Strategy", desc: "New brand positioning and messaging framework" },
+            { step: "Visual Identity", desc: "Logo evolution and design system rebuild" },
+            { step: "Launch", desc: "Full relaunch across digital and print" }
+          ]
+        },
+        {
+          title: "PI_Playable",
+          desc: "Vibrant festival brand with wayfinding and merch design.",
+          detail: "Created a high-energy visual identity for a street food festival — built for chaos, color, and community.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          galleryPlays: [
+            "https://playground.lunalabs.io/preview/269801/586899/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/269801/586899/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://example.com/gameplay/250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080"
+          ],
+          tech: ["Illustrator", "Photoshop", "After Effects"],
+          duration: { from: "2023-03", to: "2023-05" },
+          role: "Designer",
+          designProcess: [
+            { step: "Concept", desc: "Bold, chaotic visual direction with pop art references" },
+            { step: "System", desc: "Scalable pattern and color system for all surfaces" },
+            { step: "Wayfinding", desc: "Signage and map design for 40+ vendors" },
+            { step: "Merch", desc: "T-shirts, tote bags, and poster suite" }
+          ]
+        }
+      ]
+    },
+    {
+      id: "DR",
+      label: "Dancing Road",
+      projects: [
+        {
+          title: "DR_Promotional Banner",
+          desc: "Data-rich 80-page annual report designed for a hedge fund.",
+          detail: "Transformed complex financial data into an elegant, readable 80-page annual report — balancing density with breathability.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "DR_Screenshot",
+          desc: "90-page exhibition catalogue for a contemporary art show.",
+          detail: "Designed an editorial catalogue that functioned as both documentation and art object — printed on uncoated stock with bold typographic interventions.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "DR_Ads Banner",
+          desc: "Premium tea packaging for 12 SKUs across 3 product lines.",
+          detail: "Designed a packaging system rooted in botanical illustration and Japanese minimalism — each product line using a distinct illustrative motif.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "DR_Playable",
+          desc: "Monthly poster series for a jazz club's annual calendar.",
+          detail: "12 expressive typographic posters for a jazz club — each month exploring a different visual riff on jazz genre and mood.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          galleryPlays: [
+            "https://example.com/gameplay/251118_BH_GL_PB_Christmas2025_3",
+            "https://example.com/gameplay/250826_BH_GL_PB_PassoBemSolto_1920x1080",
+            "https://example.com/gameplay/250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        }
+      ]
+    },
+    {
+      id: "BH",
+      label: "Tile Hop",
+      projects: [
+        {
+          title: "BH_Promotional Banner",
+          desc: "Full social media visual campaign across IG, TikTok, and Pinterest.",
+          detail: "Designed 80+ social assets for a streetwear brand's seasonal drop — templates, launch animations, and story sequences.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "BH_Screenshot",
+          desc: "Mobile app UI design for a gamified habit tracker.",
+          detail: "Full UI design for a habit-building app using dark mode-first aesthetic with RPG progression mechanics — from wireframes to high-fidelity prototypes.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "BH_Playable",
+          desc: "Conversion-optimized landing page design for a fintech startup.",
+          detail: "Designed a high-performance landing page with A/B tested component variants — 34% conversion rate improvement post-launch.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          galleryPlays: [
+            "https://playground.lunalabs.io/preview/269801/586899/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/269801/586899/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://example.com/gameplay/250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        }
+      ]
+    },
+    {
+      id: "GDUC",
+      label: "Duet Cat",
+      projects: [
+        {
+          title: "GDUC_Promotional Banner",
+          desc: "Full social media visual campaign across IG, TikTok, and Pinterest.",
+          detail: "Designed 80+ social assets for a streetwear brand's seasonal drop — templates, launch animations, and story sequences.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "GDUC_Screenshot",
+          desc: "Mobile app UI design for a gamified habit tracker.",
+          detail: "Full UI design for a habit-building app using dark mode-first aesthetic with RPG progression mechanics — from wireframes to high-fidelity prototypes.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "GDUC_Ads Banner",
+          desc: "Full social media visual campaign across IG, TikTok, and Pinterest.",
+          detail: "Designed 80+ social assets for a streetwear brand's seasonal drop — templates, launch animations, and story sequences.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "GDUC_Playable",
+          desc: "Conversion-optimized landing page design for a fintech startup.",
+          detail: "Designed a high-performance landing page with A/B tested component variants — 34% conversion rate improvement post-launch.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          galleryPlays: [
+            "https://example.com/gameplay/251118_BH_GL_PB_Christmas2025_3",
+            "https://example.com/gameplay/250826_BH_GL_PB_PassoBemSolto_1920x1080",
+            "https://example.com/gameplay/250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        }
+      ]
+    },
+    {
+      id: "NEWGAME",
+      label: "New Game",
+      projects: [
+        {
+          title: "Icon Library — Novatech",
+          desc: "300-icon design system for a SaaS platform.",
+          detail: "Built a scalable, dual-weight icon library of 300 icons — ensuring visual consistency across web, mobile, and print at all sizes.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "Illustrated Map — City Guide",
+          desc: "Hand-drawn style illustrated city map for a travel publication.",
+          detail: "An isometric illustrated city map featuring 80+ landmarks with a warm, editorial illustration style.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        },
+        {
+          title: "Character Series — Mythic Realms",
+          desc: "12-character illustration series for a tabletop game.",
+          detail: "Created 12 distinct character illustrations with consistent visual language — supporting the game's lore across classes and factions.",
+          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          galleryImages: [
+            "251118_BH_GL_PB_Christmas2025_3.png",
+            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+          ],
+          galleryCaptions: [
+            "Pomo banner: Christmas event is coming! đạt 15% cvr",
+            "Hot song Passo bem solto",
+            "Hot song"
+          ],
+          tech: ["Illustrator", "Photoshop", "InDesign"],
+          duration: { from: "2023-09", to: "2023-11" },
+          role: "Lead Designer",
+          designProcess: [
+            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
+            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
+            { step: "Packaging", desc: "7 product lines with 3D mockups" },
+            { step: "Guide", desc: "32-page brand standards document" }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+const SITE = {
+  title: "Uyen Nguyen — Graphic Designer Portfolio",
+  copyright: "© 2025 Uyen Nguyen. All rights reserved.",
+  sectionTitles: {
+    highlights: "Featured Work",
+    about: "About Me",
+    skills: "Skills & Expertise",
+    projects: "Projects",
+    contact: "Get In Touch"
+  }
+};
+
+const UI_CONFIG = {
+  typing: {
+    phrases: ["Creative Designer", "Visual Storyteller", "Illustrator","Creative Strategist", "Creative Problem Solver"],
+    typeSpeed: 55,
+    deleteSpeed: 35,
+    pauseDuration: 2200,
+    startDelay: 500
+  }
+};
+
+/* ═══════════════════════════════════════════════════════════
+   PARTICLE CANVAS
+═══════════════════════════════════════════════════════════ */
+(function initParticles() {
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+  const POOL_SIZE = 80;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function createParticle() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.5 + 0.3,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: -Math.random() * 0.4 - 0.1,
+      alpha: Math.random() * 0.6 + 0.1,
+      life: Math.random() * 200 + 100
+    };
+  }
+
+  function init() {
+    resize();
+    particles = Array.from({ length: POOL_SIZE }, createParticle);
+    window.addEventListener('resize', resize);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+    const color = isDark ? '200, 130, 250' : '24, 191, 242';
+
+    particles.forEach((p, i) => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${color}, ${p.alpha})`;
+      ctx.fill();
+      p.x += p.vx; p.y += p.vy; p.life--;
+      if (p.life <= 0 || p.y < -10) {
+        particles[i] = createParticle();
+        particles[i].y = H + 10;
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+
+  init(); draw();
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   CUSTOM CURSOR
+═══════════════════════════════════════════════════════════ */
+(function initCursor() {
+  const cursor = document.getElementById('custom-cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+  document.addEventListener('mouseover', e => {
+    if (e.target.matches('a, button, [role="button"], .filter-btn, .page-dot, .page-btn, .project-card, .skill-card')) {
+      cursor.classList.add('hovering');
+    } else {
+      cursor.classList.remove('hovering');
+    }
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   THEME TOGGLE
+═══════════════════════════════════════════════════════════ */
+(function initTheme() {
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-icon');
+  const saved = localStorage.getItem('theme') || 'dark';
+  root.setAttribute('data-theme', saved);
+  icon.className = saved === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+
+  btn.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    icon.className = next === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════
+   HELPERS
+═══════════════════════════════════════════════════════════ */
+function calcYears(startDate) {
+  const start = new Date(startDate + '-01');
+  const now = new Date();
+  const diff = (now - start) / (1000 * 60 * 60 * 24 * 365.25);
+  return Math.floor(diff);
+}
+
+function formatDuration(dur) {
+  if (!dur) return 'N/A';
+  const from = new Date(dur.from + '-01');
+  const to = dur.to ? new Date(dur.to + '-01') : new Date();
+  const months = Math.round((to - from) / (1000 * 60 * 60 * 24 * 30));
+  if (months < 1) return '< 1 month';
+  if (months < 12) return months + ' month' + (months > 1 ? 's' : '');
+  const yrs = Math.floor(months / 12);
+  const rem = months % 12;
+  return yrs + 'yr' + (rem > 0 ? ' ' + rem + 'mo' : '');
+}
+
+function imgPlaceholder(title, icon = 'bi-image') {
+  return `<div class="img-placeholder"><i class="bi ${icon}"></i><span>${title}</span></div>`;
+}
+
+function makeTechTags(arr) {
+  return (arr || []).map(t => `<span class="tech-tag">${t}</span>`).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════
+   COUNT-UP ANIMATION
+═══════════════════════════════════════════════════════════ */
+function countUp(el, target, suffix = '') {
+  let start = 0;
+  const dur = 1800;
+  const step = (ts) => {
+    if (!start) start = ts;
+    const progress = Math.min((ts - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDER STATS
+═══════════════════════════════════════════════════════════ */
+function renderStats() {
+  const wrap = document.getElementById('stats-row');
+  PROFILE.stats.forEach(s => {
+    const val = s.value === 'auto' ? calcYears(s.startDate) + '+' : s.value;
+    const div = document.createElement('div');
+    div.className = 'stat-card';
+    div.innerHTML = `
+      <div class="stat-icon">${s.icon}</div>
+      <div class="stat-value" data-target="${val}">${val}</div>
+      <div class="stat-label">${s.label}</div>
+    `;
+    wrap.appendChild(div);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDER HIGHLIGHTS
+═══════════════════════════════════════════════════════════ */
+function renderHighlights() {
+  const wrap = document.getElementById('highlights-wrap');
+  PROJECTS_DATA.highlights.forEach((h, i) => {
+    const icons = ['bi-cup-hot-fill', 'bi-journal-richtext'];
+    const div = document.createElement('div');
+    div.className = 'highlight-item reveal' + (i % 2 === 0 ? '' : '');
+    div.innerHTML = `
+      <div class="highlight-media">
+        ${imgPlaceholder(h.title, icons[i] || 'bi-image')}
+        <div class="media-overlay"></div>
+      </div>
+      <div class="highlight-info">
+        <div class="highlight-tag">◆ FEATURED PROJECT ${i+1}</div>
+        <h3 class="highlight-title">${h.title}</h3>
+        <p class="highlight-desc">${h.desc}</p>
+        <div class="tech-tags">${makeTechTags(h.tech)}</div>
+        <div class="d-flex gap-2 flex-wrap">
+          <button class="btn-cyber" onclick="openModal(${i}, 'highlight')">
+            <i class="bi bi-eye-fill"></i> View Detail
+          </button>
+        </div>
+      </div>
+    `;
+    wrap.appendChild(div);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDER ABOUT
+═══════════════════════════════════════════════════════════ */
+function renderAbout() {
+  document.getElementById('about-desc').innerHTML = PROFILE.about.description;
+  document.getElementById('about-quote').textContent = '"' + PROFILE.about.quote + '"';
+  const cvBtn = document.getElementById('about-cv-btn');
+  if (cvBtn) cvBtn.href = PROFILE.about.cvLink;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDER SKILLS (paginated)
+═══════════════════════════════════════════════════════════ */
+const SKILLS_PER_PAGE = 6;
+let skillsPage = 0;
+
+function renderSkills() {
+  const grid = document.getElementById('skills-grid');
+  const pag = document.getElementById('skills-pagination');
+  const totalPages = Math.ceil(PROFILE.skills.length / SKILLS_PER_PAGE);
+  const start = skillsPage * SKILLS_PER_PAGE;
+  const slice = PROFILE.skills.slice(start, start + SKILLS_PER_PAGE);
+
+  grid.classList.add('slide-out');
+  setTimeout(() => {
+    grid.innerHTML = '';
+    slice.forEach((s, i) => {
+      const card = document.createElement('div');
+      card.className = `skill-card reveal stagger-${(i%6)+1}`;
+      card.innerHTML = `
+        <div class="skill-icon"><i class="bi ${s.icon}"></i></div>
+        <div class="skill-title">${s.title}</div>
+        <div class="skill-desc">${s.desc}</div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar" data-level="${s.level}"></div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+    grid.classList.remove('slide-out');
+    initReveal();
+    // Animate skill bars
+    setTimeout(() => {
+      grid.querySelectorAll('.skill-bar').forEach(bar => {
+        bar.style.width = bar.dataset.level + '%';
+      });
+    }, 200);
+  }, 250);
+
+  pag.innerHTML = '';
+  for (let p = 0; p < totalPages; p++) {
+    const dot = document.createElement('button');
+    dot.className = 'page-dot' + (p === skillsPage ? ' active' : '');
+    dot.addEventListener('click', () => { skillsPage = p; renderSkills(); });
+    pag.appendChild(dot);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDER PROJECTS (filter + paginate)
+═══════════════════════════════════════════════════════════ */
+const PROJECTS_PER_PAGE = 6;
+let activeCategory = 'All';
+let projectsPage = 0;
+let projectsCurrentList = [];
+
+function getAllProjects() {
+  return PROJECTS_DATA.projectCategories.flatMap(c => c.projects.map(p => ({ ...p, _cat: c.label })));
+}
+
+function getFilteredProjects() {
+  if (activeCategory === 'All') return getAllProjects();
+  const cat = PROJECTS_DATA.projectCategories.find(c => c.id === activeCategory);
+  return cat ? cat.projects.map(p => ({ ...p, _cat: cat.label })) : [];
+}
+
+const PROJECT_ICONS = ['bi-layers-fill','bi-journal-richtext','bi-phone-fill','bi-brush-fill','bi-star-fill','bi-lightning-fill','bi-gem','bi-hexagon-fill'];
+
+function renderProjectsGrid() {
+  const grid = document.getElementById('projects-grid');
+  const pag = document.getElementById('projects-pagination');
+  projectsCurrentList = getFilteredProjects();
+  const totalPages = Math.ceil(projectsCurrentList.length / PROJECTS_PER_PAGE);
+  if (projectsPage >= totalPages) projectsPage = 0;
+  const start = projectsPage * PROJECTS_PER_PAGE;
+  const slice = projectsCurrentList.slice(start, start + PROJECTS_PER_PAGE);
+
+  grid.style.opacity = '0';
+  setTimeout(() => {
+    grid.innerHTML = '';
+    if (slice.length === 0) {
+      grid.innerHTML = '<div class="no-projects"><i class="bi bi-search"></i>No projects in this category yet.</div>';
+    } else {
+      slice.forEach((p, i) => {
+        const gIdx = start + i;
+        const thumbSrc = p.image || p.images?.[0] || p.galleryImages?.[0] || '';
+        const thumbHtml = thumbSrc
+          ? `<img src="${thumbSrc}" alt="${p.title}" />`
+          : `<div class="img-placeholder">${imgPlaceholder(p.title, PROJECT_ICONS[gIdx % PROJECT_ICONS.length])}</div>`;
+        const card = document.createElement('div');
+        card.className = 'project-card reveal stagger-' + ((i%3)+1);
+        card.innerHTML = `
+          <div class="project-thumb">${thumbHtml}</div>
+          <div class="project-thumb-overlay"></div>
+          <div class="project-body">
+            <div class="project-title">${p.title}</div>
+            <div class="project-desc">${p.desc}</div>
+            <div class="project-footer">
+              <div class="tech-tags">${makeTechTags(p.tech ? p.tech.slice(0,2) : [])}</div>
+              <button class="btn-cyber" style="padding:6px 14px;font-size:0.7rem;" onclick="openProjectModal(${gIdx})">
+                <i class="bi bi-arrows-fullscreen"></i> Detail
+              </button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+    grid.style.opacity = '1';
+    initReveal();
+  }, 180);
+
+  pag.innerHTML = '';
+  for (let p = 0; p < totalPages; p++) {
+    const btn = document.createElement('button');
+    btn.className = 'page-btn' + (p === projectsPage ? ' active' : '');
+    btn.textContent = p + 1;
+    btn.addEventListener('click', () => { projectsPage = p; renderProjectsGrid(); });
+    pag.appendChild(btn);
+  }
+}
+
+function renderProjectsFilter() {
+  const wrap = document.getElementById('projects-filter');
+  const categories = [{ id: 'All', label: 'All' }, ...PROJECTS_DATA.projectCategories];
+  categories.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn' + (c.id === activeCategory ? ' active' : '');
+    btn.textContent = c.label;
+    btn.addEventListener('click', () => {
+      activeCategory = c.id;
+      projectsPage = 0;
+      wrap.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProjectsGrid();
+    });
+    wrap.appendChild(btn);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MODAL
+═══════════════════════════════════════════════════════════ */
+function openModal(idx, type) {
+  let project;
+  if (type === 'highlight') project = PROJECTS_DATA.highlights[idx];
+  else project = getAllProjects()[idx];
+  if (!project) return;
+  showModal(project);
+}
+
+function openProjectModal(idx) {
+  const project = projectsCurrentList[idx];
+  if (!project) return;
+  showModal(project);
+}
+
+function showModal(p) {
+  const overlay = document.getElementById('project-modal');
+  const body = document.getElementById('modal-body');
+  const titleBar = document.getElementById('modal-title-bar');
+  titleBar.textContent = p.title;
+
+  const images = p.galleryItems ? p.galleryItems.slice(0, 20) : (p.galleryImages || p.images || (p.image ? [p.image] : [])).slice(0, 20).map((src, index) => ({
+    src,
+    caption: (p.galleryCaptions && p.galleryCaptions[index]) || `Image ${index + 1}`,
+    gameplay: (p.galleryPlays && p.galleryPlays[index]) || null
+  }));
+
+  let html = `
+    <div class="modal-split">
+      <div class="modal-main-panel">
+        ${images.length > 0 ? `
+          <div class="modal-selected-image">
+            <div class="selected-image-frame">
+              <img id="modal-selected-img" src="${images[0].src}" alt="${p.title}" />
+            </div>
+            <div id="modal-selected-caption" class="selected-image-caption">${images[0].caption || ''}</div>
+            <a id="modal-selected-play" class="selected-play-btn ${images[0].gameplay ? '' : 'hidden'}" href="${images[0].gameplay || '#'}" target="_blank" rel="noopener">Play Gameplay</a>
+          </div>
+        ` : `
+          <div class="modal-selected-image">
+            <div class="selected-image-frame">${imgPlaceholder(p.title, 'bi-image-fill')}</div>
+          </div>
+        `}
+        <div class="modal-meta">
+          <div class="meta-badge"><span>⏱</span> ${formatDuration(p.duration)}</div>
+          <div class="meta-badge"><span>🎨</span> ${p.role || 'Designer'}</div>
+        </div>
+        <div class="modal-desc">${p.detail || p.desc}</div>
+  `;
+
+  if (p.designProcess && p.designProcess.length) {
+    html += `<div class="modal-section-title">🎯 Design Process</div>
+    <div class="process-steps">
+    ${p.designProcess.map((s, i) => `
+      <div class="process-step">
+        <div class="process-step-label">0${i+1}. ${s.step}</div>
+        <div style="color:var(--muted);font-size:0.8rem;">${s.desc}</div>
+      </div>
+    `).join('')}
+    </div>`;
+  }
+
+  if (p.impacts && p.impacts.length) {
+    html += `<div class="modal-section-title">💡 Key Results</div>
+    <div class="impact-list">
+    ${p.impacts.map(im => `
+      <div class="impact-item">
+        <div class="impact-label">${im.label}</div>
+        <div class="impact-desc">${im.desc}</div>
+      </div>
+    `).join('')}
+    </div>`;
+  }
+
+  if (p.tech && p.tech.length) {
+    html += `<div class="modal-section-title">🛠 Tools Used</div>
+    <div class="tech-tags" style="margin-top:0;">${makeTechTags(p.tech)}</div>`;
+  }
+
+  html += `
+      </div>
+      <div class="modal-side-panel">
+        <div class="modal-side-title">Other Images</div>
+        <div class="modal-gallery-wrap">
+          ${images.map((item, index) => `
+            <div class="gallery-item${index === 0 ? ' active' : ''}" data-index="${index}">
+              <img src="${item.src}" alt="${p.title} ${index + 1}" />
+              ${item.gameplay ? `<a class="gallery-play-link" href="${item.gameplay}" target="_blank" rel="noopener">Play</a>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>`;
+
+  body.innerHTML = html;
+
+  const selectedImg = body.querySelector('#modal-selected-img');
+  const lightboxOverlay = document.getElementById('image-lightbox-overlay');
+  const lightboxImg = document.getElementById('image-lightbox-img');
+  const selectedCaption = body.querySelector('#modal-selected-caption');
+  const selectedPlay = body.querySelector('#modal-selected-play');
+  const galleryItems = body.querySelectorAll('.modal-gallery-wrap .gallery-item');
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const index = Number(item.dataset.index);
+      if (!Number.isFinite(index) || !images[index]) return;
+      selectedImg.src = images[index].src;
+      selectedImg.alt = `${p.title} ${index + 1}`;
+      selectedCaption.textContent = images[index].caption || '';
+      if (selectedPlay) {
+        const hasGameplay = Boolean(images[index].gameplay);
+        selectedPlay.classList.toggle('hidden', !hasGameplay);
+        selectedPlay.href = images[index].gameplay || '#';
+      }
+      body.querySelectorAll('.modal-gallery-wrap .gallery-item.active').forEach(active => active.classList.remove('active'));
+      item.classList.add('active');
+    });
+  });
+
+  if (selectedImg) {
+    selectedImg.addEventListener('click', () => {
+      lightboxImg.src = selectedImg.src;
+      lightboxImg.alt = selectedImg.alt;
+      lightboxOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+document.getElementById('project-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('project-modal')) closeModal();
+});
+const lightboxOverlay = document.getElementById('image-lightbox-overlay');
+const lightboxCloseBtn = document.getElementById('image-lightbox-close');
+if (lightboxOverlay) {
+  lightboxOverlay.addEventListener('click', e => {
+    if (e.target === lightboxOverlay) {
+      lightboxOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+}
+if (lightboxCloseBtn) {
+  lightboxCloseBtn.addEventListener('click', () => {
+    lightboxOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+}
+
+function closeModal() {
+  document.getElementById('project-modal').classList.remove('open');
+  if (lightboxOverlay) lightboxOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDER TIMELINE
+═══════════════════════════════════════════════════════════ */
+function renderTimeline() {
+  const wrap = document.getElementById('timeline-items');
+  PROFILE.timeline.forEach((t, i) => {
+    const item = document.createElement('div');
+    item.className = 'timeline-item';
+    const contentHtml = `
+      <div class="timeline-period">${t.period}</div>
+      <div class="timeline-role">${t.role}</div>
+      <div class="timeline-company"><i class="bi bi-building-fill" style="color:var(--primary);margin-right:6px;"></i>${t.company}</div>
+      <div class="timeline-desc">${t.desc}</div>
+    `;
+    if (i % 2 === 0) {
+      item.innerHTML = `
+        <div class="timeline-content reveal from-left">${contentHtml}</div>
+        <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+        <div></div>
+      `;
+    } else {
+      item.innerHTML = `
+        <div></div>
+        <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+        <div class="timeline-content reveal from-right">${contentHtml}</div>
+      `;
+    }
+    wrap.appendChild(item);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDER FOOTER
+═══════════════════════════════════════════════════════════ */
+function renderFooter() {
+  const socials = document.getElementById('footer-socials');
+  PROFILE.socials.forEach(s => {
+    const a = document.createElement('a');
+    a.href = s.link;
+    a.className = 'footer-social-link';
+    a.target = '_blank';
+    a.innerHTML = `<i class="bi ${s.icon}"></i>`;
+    socials.appendChild(a);
+  });
+  document.getElementById('footer-copy').textContent = SITE.copyright;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TYPING EFFECT
+═══════════════════════════════════════════════════════════ */
+function initTyping() {
+  const el = document.getElementById('typing-text');
+  const cfg = UI_CONFIG.typing;
+  let phraseIdx = 0, charIdx = 0, isDeleting = false;
+
+  function tick() {
+    const phrase = cfg.phrases[phraseIdx];
+    if (isDeleting) {
+      charIdx--;
+      el.textContent = phrase.substring(0, charIdx);
+      if (charIdx === 0) {
+        isDeleting = false;
+        phraseIdx = (phraseIdx + 1) % cfg.phrases.length;
+        setTimeout(tick, cfg.startDelay);
+        return;
+      }
+      setTimeout(tick, cfg.deleteSpeed);
+    } else {
+      charIdx++;
+      el.textContent = phrase.substring(0, charIdx);
+      if (charIdx === phrase.length) {
+        isDeleting = true;
+        setTimeout(tick, cfg.pauseDuration);
+        return;
+      }
+      setTimeout(tick, cfg.typeSpeed);
+    }
+  }
+  setTimeout(tick, cfg.startDelay);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════════════════ */
+function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ACTIVE NAV ON SCROLL
+═══════════════════════════════════════════════════════════ */
+function initNavScroll() {
+  const sections = ['hero','about','highlights','skills','projects','contact'];
+  const links = document.querySelectorAll('.nav-links a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAVBAR HAMBURGER
+═══════════════════════════════════════════════════════════ */
+function initHamburger() {
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('mobile-nav');
+
+  // Build mobile nav links
+  const links = ['home','about','highlights','projects','contact'];
+  const labels = ['Home','About','Highlights','Projects','Contact'];
+  labels.forEach((label, i) => {
+    const a = document.createElement('a');
+    a.href = i === 0 ? '#hero' : '#' + links[i];
+    a.textContent = label;
+    a.addEventListener('click', () => nav.classList.remove('open'));
+    nav.appendChild(a);
+  });
+
+  btn.addEventListener('click', () => nav.classList.toggle('open'));
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION TITLES
+═══════════════════════════════════════════════════════════ */
+function renderSectionTitles() {
+  Object.entries(SITE.sectionTitles).forEach(([key, val]) => {
+    const el = document.getElementById('title-' + key);
+    if (el) el.textContent = val;
+  });
+  document.getElementById('hero-name').textContent = PROFILE.hero.name;
+  document.title = SITE.title;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTACT FORM
+═══════════════════════════════════════════════════════════ */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('contact-success');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    success.style.display = 'block';
+    form.reset();
+    setTimeout(() => { success.style.display = 'none'; }, 5000);
+  });
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════════════ */
+function init() {
+  renderSectionTitles();
+  renderStats();
+  renderHighlights();
+  renderAbout();
+  renderSkills();
+  renderProjectsFilter();
+  renderProjectsGrid();
+  renderFooter();
+  initTyping();
+  initReveal();
+  initNavScroll();
+  initHamburger();
+  initContactForm();
+
+  // Skill bars initial animation
+  setTimeout(() => {
+    document.querySelectorAll('.skill-bar').forEach(bar => {
+      bar.style.width = bar.dataset.level + '%';
+    });
+  }, 600);
+}
+
+// Loading screen
+window.addEventListener('load', () => {
+  init();
+  setTimeout(() => {
+    const ls = document.getElementById('loading-screen');
+    ls.classList.add('hidden');
+    setTimeout(() => { ls.style.display = 'none'; }, 700);
+  }, 2000);
+});
+</script>
+</body>
+</html>

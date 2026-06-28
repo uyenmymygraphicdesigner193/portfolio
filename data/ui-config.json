@@ -1,0 +1,42 @@
+{
+  "loading": {
+    "icon": "assets/media/loading-icon.svg",
+    "text": "Loading..."
+  },
+  "cursor": {
+    "default": "assets/media/cursor.svg",
+    "size": 24
+  },
+  "typing": {
+    "phrases": [
+      "Graphic Designer",
+      "Visual Storyteller",
+      "Brand Identity Specialist",
+      "Creative Problem Solver",
+      "Motion Graphics Artist"
+    ],
+    "typeSpeed": 60,
+    "deleteSpeed": 40,
+    "pauseDuration": 2000,
+    "startDelay": 400
+  },
+  "fonts": {
+    "pixel": "'Press Start 2P', monospace",
+    "head": "'Fontspring Hyperspace Race', sans-serif",
+    "body": "'Rajdhani', 'Segoe UI', sans-serif"
+  },
+  "modal": {
+    "sections": {
+      "impacts": { "icon": "💡", "title": "Key Results" },
+      "designProcess": { "icon": "🎯", "title": "Design Process" }
+    },
+    "badges": {
+      "duration": { "icon": "⏱" },
+      "role": { "icon": "🎨" }
+    },
+    "storeButtons": {
+      "behance": { "icon": "bi-behance", "text": "View on Behance" },
+      "dribbble": { "icon": "bi-dribbble", "text": "View on Dribbble" }
+    }
+  }
+}

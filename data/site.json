@@ -1,0 +1,16 @@
+{
+  "title": "Uyen Nguyen — Graphic Designer Portfolio",
+  "description": "Graphic Designer portfolio specializing in branding, visual identity, and digital design.",
+  "url": "https://MyUyenPortfolio/",
+  "ogImage": "assets/media/og-preview.svg",
+  "favicon": "assets/media/favicon.svg",
+  "copyright": "2026 Uyen Nguyen. All rights reserved.",
+  "sectionTitles": {
+    "highlights": "Featured Work",
+    "about": "About Me",
+    "skills": "Skills & Expertise",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Get In Touch"
+  }
+}

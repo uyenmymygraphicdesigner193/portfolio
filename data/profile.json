@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "name": "Uyên Mỹ Mỹ",
+    "tagline": "Graphic Designer | Visual Storyteller",
+    "cta": "View My Work"
+  },
+  "stats": [
+    { "icon": "🎨", "value": "auto", "label": "Years EXP", "startDate": "2020-01" },
+    { "icon": "📁", "value": "50+", "label": "Projects Done" },
+    { "icon": "🤝", "value": "30+", "label": "Clients Served" }
+  ],
+  "about": {
+    "description": "Graphic Designer with 5+ years of experience specializing in branding, visual identity, and digital design. I craft compelling visual narratives that resonate with audiences and elevate brands to the next level. My work blends strategic thinking with aesthetic excellence — creating designs that are not just beautiful, but meaningful and effective.",
+    "cvLink": "assets/media/CV.pdf",
+    "avatar": "assets/media/avatars/avatar.jpg",
+    "avatarZoom": 1.2,
+    "avatarOffsetX": 0,
+    "avatarOffsetY": 0,
+    "quote": "Design is not just what it looks like — it's how it works."
+  },
+  "skills": [
+    { "icon": "bi-palette", "title": "Branding & Identity", "desc": "Logo design, brand guidelines, visual systems", "progress": 95 },
+    { "icon": "bi-fonts", "title": "Typography", "desc": "Type pairing, custom lettering, hierarchy", "progress": 90 },
+    { "icon": "bi-layout-text-window", "title": "Layout Design", "desc": "Editorial, print, multi-page documents", "progress": 88 },
+    { "icon": "bi-brush", "title": "Illustration", "desc": "Digital illustration, icon sets, infographics", "progress": 80 },
+    { "icon": "bi-image", "title": "Photo Editing", "desc": "Retouching, compositing, color grading", "progress": 85 },
+    { "icon": "bi-film", "title": "Motion Graphics", "desc": "Animated logos, social media content, transitions", "progress": 75 },
+    { "icon": "bi-printer", "title": "Print Design", "desc": "Packaging, posters, business cards, brochures", "progress": 92 },
+    { "icon": "bi-phone", "title": "UI/UX Design", "desc": "Wireframes, prototypes, design systems, Figma", "progress": 78 }
+  ],
+  "timeline": [
+    { "period": "2023 – Present", "role": "Senior Graphic Designer", "company": "Creative Agency", "desc": "Leading brand identity projects, mentoring junior designers, managing client relationships. Overseeing multi-channel campaigns from concept to delivery." },
+    { "period": "2021 – 2023", "role": "Graphic Designer", "company": "Design Studio", "desc": "Created visual identities, marketing materials, and digital assets for various clients across tech, fashion, and hospitality industries." },
+    { "period": "2020 – 2021", "role": "Junior Designer", "company": "Freelance", "desc": "Started freelancing, building portfolio with logo design, social media graphics, print materials, and brand consultation." }
+  ],
+  "socials": [
+    { "icon": "bi-behance", "link": "https://behance.net" },
+    { "icon": "bi-dribbble", "link": "https://dribbble.com" },
+    { "icon": "bi-instagram", "link": "https://instagram.com" },
+    { "icon": "bi-linkedin", "link": "https://linkedin.com" },
+    { "icon": "bi-envelope-fill", "link": "mailto:alex@email.com" }
+  ]
+}
