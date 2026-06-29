@@ -24,7 +24,7 @@
       --bg: #0b0f41;
       --bg2: #0c042f;
       --panel: #1c0a56cc;
-      --panel-solid: #4d33a4;
+      --panel-solid: #4d33a4b6;
       --primary: #ff83f9;
       --primary-dim: #9a5de4;
       --secondary: #0a3256;
@@ -1393,32 +1393,32 @@
 
 <hr class="neon-divider">
 
-<!-- ═══════════════════════════════════════════ SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">// 03</div>
-      <h2 class="section-title" id="title-skills">Skills &amp; Expertise</h2>
-      <p class="section-sub">Tools of the trade</p>
-    </div>
-    <div class="skills-grid skills-page" id="skills-grid"></div>
-    <div class="skills-pagination" id="skills-pagination"></div>
-  </div>
-</section>
-
-<hr class="neon-divider">
-
 <!-- ═══════════════════════════════════════════ PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-num">// 04</div>
+      <div class="section-num">// 03</div>
       <h2 class="section-title" id="title-projects">Projects</h2>
       <p class="section-sub">Explore the full body of work</p>
     </div>
     <div class="projects-filter" id="projects-filter"></div>
     <div class="projects-grid" id="projects-grid"></div>
     <div class="projects-pagination" id="projects-pagination"></div>
+  </div>
+</section>
+
+<hr class="neon-divider">
+
+<!-- ═══════════════════════════════════════════ SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">// 04</div>
+      <h2 class="section-title" id="title-skills">Skills &amp; Expertise</h2>
+      <p class="section-sub">Tools of the trade</p>
+    </div>
+    <div class="skills-grid skills-page" id="skills-grid"></div>
+    <div class="skills-pagination" id="skills-pagination"></div>
   </div>
 </section>
 
@@ -1506,21 +1506,17 @@ const PROFILE = {
     quote: "Design is not just what it looks like — it's how it makes you feel."
   },
   skills: [
-    { icon: "bi-palette-fill", title: "Branding & Identity", desc: "Logo design, brand guidelines, visual systems", level: 95 },
+    { icon: "bi-brush-fill", title: "Creative Strategy", desc: "Planning and concept research lay the groundwork for our upcoming creative execution", level: 82 },
     { icon: "bi-fonts", title: "Typography", desc: "Type pairing, custom lettering, hierarchy", level: 90 },
-    { icon: "bi-layout-text-window-reverse", title: "Layout Design", desc: "Editorial, print, multi-page documents", level: 88 },
-    { icon: "bi-brush-fill", title: "Illustration", desc: "Digital illustration, icon sets, infographics", level: 82 },
-    { icon: "bi-image-fill", title: "Photo Editing", desc: "Retouching, compositing, color grading", level: 85 },
-    { icon: "bi-film", title: "Motion Graphics", desc: "Animated logos, social media content", level: 78 },
-    { icon: "bi-printer-fill", title: "Print Design", desc: "Packaging, posters, business cards", level: 92 },
-    { icon: "bi-phone-fill", title: "UI/UX Design", desc: "Wireframes, prototypes, Figma systems", level: 80 },
-    { icon: "bi-camera-video-fill", title: "Video Production", desc: "Brand films, reels, social content", level: 72 }
+    { icon: "bi-layout-text-window-reverse", title: "Layout Design", desc: "Moodboards sketching, Finalize layout", level: 88 },
+    { icon: "bi-brush-fill", title: "Illustration", desc: "Digital illustration, icon sets, infographics, Ui game", level: 82 },
+    { icon: "bi-film", title: "Graphic Designer", desc: "Integrating modern visual trends into concept planning for upcoming graphic projects", level: 78 },
   ],
   timeline: [
     {
-      period: "2023 – Present",
+      period: "2021 – 2023",
       role: "Senior Graphic Designer",
-      company: "Neon Studio — Creative Agency",
+      company: "IMBA studio",
       desc: "Leading brand identity projects for global clients, mentoring a team of 4 junior designers, and managing end-to-end visual campaigns across print and digital."
     },
     {
@@ -1548,58 +1544,502 @@ const PROFILE = {
 const PROJECTS_DATA = {
   highlights: [
     {
-      title: "Winning Creative",
+      title: "ASO Winning",
       desc: "A complete visual identity system built for a specialty coffee brand entering the premium market.",
       detail: "Developed the full brand identity including logo, color palette, typography system, packaging, signage, and social media templates.<br><br>The brand story centers around the aurora borealis as a metaphor for rare, radiant moments — perfectly mirroring the coffee experience. Every element reinforces warmth, craftsmanship, and premium quality.",
-      image: "assets/media/projects/img/coffee-brand.svg",
-      image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-          galleryImages: [
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+      image: "PI/260302_PI_GL_PB_MontagemMiau_1920x1080 1.jpg",
+      image: "PI/260302_PI_GL_PB_MontagemMiau_1920x1080 1.jpg",
+          galleryItems: [
+        {
+          src: "Winning/PROMO/MagicTiles3Piano-Game_1443446174_20250624_AppStore_AppsGamesWatch 1.png",
+          caption: "PI_GL_PBNA_FE0Lay0SSi0FreshPromo0Demon",
+          description: "A vibrant Featured Image highlighting the next-generation piano key mechanics, utilizing a modern layout and vivid neon effects to optimize app store conversion rates",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Sketch", desc: "ketch master layouts to clearly communicate design directions to stakeholders" },
+            { step: "AI Integration", desc: "Utilize AI for concept generation and tailored asset variations." },
+            { step: "Finalize", desc: "Refine layout, integrate storytelling, adjust lighting, and finalize the artwork" }
           ],
-          galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Achieved a record-breaking CVR uplift by deploying high-converting live event assets." },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" },
+            { label: "Featuring", desc: "Designed high-impact visual assets that met store editorial standards for featuring" }
           ],
+          extra: "Designed to support ASO campaigns, ensuring consistency and clarity across the entire store listing"
+        },    
+        {
+          src: "Winning/PROMO/250424_PI_GL_PBNA_FE0Lay0SSi0FreshPromo0Demon_1920x1080 1.png",
+          caption: "PI_GL_PBNA_FE0Lay0SSi0FreshPromo0Demon",
+          description: "A dedicated promotional banner designed to recover search traffic drops, featuring a charismatic character and high-contrast color grading to effectively stimulate user click-throughs",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Concept", desc: "Draft initial layouts to help stakeholders visualize the creative execution." },
+            { step: "Refine", desc: "Polishing composition, narrative, and lighting for the final design delivery" }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Achieved a record-breaking CVR uplift by deploying high-converting live event assets." },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" },
+            { label: "Featuring", desc: "Designed high-impact visual assets that met store editorial standards for featuring" }
+          ],
+          extra: "Tailored for ASO campaigns to maintain consistency and visual clarity throughout the store listing"
+        },
+        {
+          src: "Winning/PROMO/250717_BH_GL_PB_FeatureArtist0OliviaRodrigo_1920x1080 1.png",
+          caption: "Hot song Passo bem solto",
+          description: "A media promotional banner showcasing Olivia Rodrigo's music track, adopting a dreamy neon-purple aesthetic and modern pop art elements to successfully maximize marketing campaign conversions.",
+          designProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "AI Integration", desc: "everage AI to execute concepts and propose relevant design variants." },
+            { step: "Layout", desc: "Create overall layouts to visualize the execution plan for stakeholders" },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+         tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Achieved a record-breaking CVR uplift by deploying high-converting live event assets." },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" },
+            { label: "Featuring", desc: "Designed high-impact visual assets that met store editorial standards for featuring" }
+          ],
+          extra: "Designed to support ASO campaigns, ensuring consistency and clarity across the entire store listing."
+        },
+        {
+          src: "Winning/PROMO/250723_PI_GL_PB_Aiscream0kawaii_1920x1080 1.png",
+          caption: "Hot song Passo bem solto",
+          description: "Promotional layout for a fresh music release designed to feel modern and premium.",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Sketch", desc: "ketch master layouts to clearly communicate design directions to stakeholders" },
+            { step: "AI Integration", desc: "Utilize AI for concept generation and tailored asset variations." },
+            { step: "Finalize", desc: "Refine layout, integrate storytelling, adjust lighting, and finalize the artwork" }
+          ],
+         tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Achieved a record-breaking CVR uplift by deploying high-converting live event assets." },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "Promoted events drive store user acquisition, boosting CVR for a massive win"
+        },
+        {
+          src: "Winning/PROMO/250809_PI_GL_PB_RhythmAdventure0TilesCharacter 1.png",
+          caption: "PI_GL_PB_RhythmAdventure0TilesCharacter",
+          description: "A unique music event banner centered around the CATHOVEN theme, harmoniously blending an adorable cat aesthetic with classical art elements to deliver a fresh visual experience.",
+          designProcess: [
+            { step: "Moodboard", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Layout", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+         tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate by 0.75% on launch day." },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" },
+            { label: "Featuring", desc: "Leveraged exclusive in-game events to successfully land global store featuring" }
+          ],
+          extra: "App Store featuring for this high-engagement event generated nearly 2M impressions and a strong 0.75% CVR"
+        },
+        {
+          src: "Winning/PROMO/250826_BH_GL_PB_PassoBemSolto_1920x1080 1 1.png",
+          caption: "Hot song Passo bem solto",
+          description: "A promotional banner capturing a lively night festival vibe with radiant neon lights, conveying the energetic spirit of the music track to stimulate instant user interactions.",
+          designProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "AI Integration", desc: "everage AI to execute concepts and propose relevant design variants." },
+            { step: "Layout", desc: "Create overall layouts to visualize the execution plan for stakeholders" },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+         tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate by 0.75% on launch day." },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" },
+            { label: "App Store / Google Play Featuring", desc: "Designed high-impact visual assets that met store editorial standards for featuring" }
+          ],
+          extra: "Promotional events successfully engage store users, delivering high CVR and a major win"
+        },
+        {
+          src: "Winning/PROMO/250914_DR_GL_PB_MeJalo_1920x1080 1.png",
+          caption: "DR_GL_PB_MeJalo",
+          description: "Promotional layout for a fresh music release designed to feel modern and premium.",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Sketch", desc: "ketch master layouts to clearly communicate design directions to stakeholders" },
+            { step: "AI Integration", desc: "Utilize AI for concept generation and tailored asset variations." },
+            { step: "Finalize", desc: "Refine layout, integrate storytelling, adjust lighting, and finalize the artwork" }
+          ],
+         tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "Promotional events successfully engage store users, delivering high CVR and a major win"
+        },
+        {
+          src: "Winning/PROMO/250927_GDUC_GL_PB_BlindBag 1.png",
+          caption: "GDUC_GL_PB_BlindBag",
+          description: "Promotional layout for a fresh music release designed to feel modern and premium.",
+          designProcess: [
+            { step: "Moodboard", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Layout", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+         tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate by 0.75% on launch day." },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" },
+            { label: "Featuring", desc: "Designed high-impact visual assets that met store editorial standards for featuring" }
+          ],
+          extra: "Designed to support both digital and print campaigns with consistent brand clarity."
+        },
+        {
+          src: "PI/251120_PI_GL_PB_WinterPass_1920x1080 1.jpg",
+          caption: "Winter Pass",
+          description: "Promotional layout for a fresh music release designed to feel modern and premium.",
+          designProcess: [
+            { step: "Moodboard", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Layout", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+         tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "Winter Pass ranks second with over 4.6M impressions across iOS and Android, making it one of Magic Tiles 3's most engaging live events."
+        },
+        {
+          src: "Winning/PROMO/251013_DR_GL_PB_Halloween0NewSkin_1920x1080 1.png",
+          caption: "DR_GL_PB_Halloween0NewSkin",
+          description: "Promotional layout for a fresh music release designed to feel modern and premium.",
+          ddesignProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "Collect Assets", desc: "Merge AI with asset sources for faster, smoother production workflows." },
+            { step: "Design", desc: "Create overall layouts to visualize the execution plan for stakeholders" },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+         tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "Designed to support both digital and print campaigns with consistent brand clarity."
+        },
+        {
+          src: "Winning/PROMO/251028_PI_GL_PB_ThanksGiving_1920x1080 1.png",
+          caption: "PI_GL_PB_ThanksGiving",
+          description: "A striking visual for a high-energy music promotion made to feel cinematic and memorable.",
+          designProcess: [
+            { step: "Moodboard", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Layout", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "Created to amplify the brand story with motion-ready assets."
+        },
+        {
+          src: "Winning/PROMO/260119_DR_GL_PB_Valentine0Neighborlover 1.png",
+          caption: "DR_GL_PB_Valentine0Neighborlover",
+          description: "A brand experience frame tailored for cross-channel promotions.",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Sketch", desc: "ketch master layouts to clearly communicate design directions to stakeholders" },
+            { step: "AI Integration", desc: "Utilize AI for concept generation and tailored asset variations." },
+            { step: "Finalize", desc: "Refine layout, integrate storytelling, adjust lighting, and finalize the artwork" }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "Built for flexibility across banners, stories, and in-app features."
+        },
+        {
+          src: "Winning/PROMO/260302_PI_GL_PB_MontagemMiau_1920x1080 1.png",
+          caption: "PI_GL_PB_MontagemMiau",
+          description: "A brand experience frame tailored for cross-channel promotions.",
+          designProcess: [
+            { step: "Moodboard", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Design", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "The highest-CVR event for Magic Tiles 3 to date, hitting 5M impressions and 0.31% CVR"
+        },
+        {
+          src: "Winning/PROMO/260324_DR_GL_PB_Easter_1920x1080 1.png",
+          caption: "DR_GL_PB_Easter",
+          description: "A brand experience frame tailored for cross-channel promotions.",
+          designProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "AI Integration", desc: "everage AI to execute concepts and propose relevant design variants." },
+            { step: "Layout", desc: "Create overall layouts to visualize the execution plan for stakeholders" },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "Built for flexibility across banners, stories, and in-app features."
+        },
+        {
+          src: "Winning/PROMO/260406_PI_GL_PB_NobatidaoFunk_1920x1080 1.png",
+          caption: "PI_GL_PB_NobatidaoFunk",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          designProcess: [
+            { step: "Moodboard", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Design", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "The trending song NO BATIDAO event ranks #2 on the store, securing over 4.5M impressions and a 0.27% CVR uplift."
+        },
+        {
+          src: "Winning/PROMO/260601_DR_GL_PB_Ocean0Race_1920x1080 1.png",
+          caption: "DR_GL_PB_Ocean0Race",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Concept", desc: "Draft initial layouts to help stakeholders visualize the creative execution." },
+            { step: "Refine", desc: "Polishing composition, narrative, and lighting for the final design delivery" }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "A focused design piece meant to draw players into the brand world through visual momentum."
+        },
+        {
+          src: "Winning/SS/250819_PI_JP_S_Colorful0Aiscream_SS4 1 1.png",
+          caption: "PI_JP_S_Colorful0Aiscream",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          designProcess: [
+            { step: "Moodboard", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Layout", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "A focused design piece meant to draw players into the brand world through visual momentum."
+        },
+        {
+          src: "Winning/SS/250909_DR_GL_S_NewUI 1.png",
+          caption: "DR_GL_S_NewUI",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          designProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "Collect Assets", desc: "Merge AI with asset sources for faster, smoother production workflows." },
+            { step: "Design", desc: "Create overall layouts to visualize the execution plan for stakeholders" },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "A focused design piece meant to draw players into the brand world through visual momentum."
+        },
+        {
+          src: "Winning/SS/260324_BH_GL_S_Easter0SeasonalFocus1 1.png",
+          caption: "BH_GL_S_Easter0SeasonalFocus1",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          designProcess: [
+            { step: "Moodboard", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Design", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker"],
+          impacts: [
+            { label: "CVR", desc: "Increased conversion rate" },
+            { label: "Impressions & Store Visibility", desc: "Drove massive organic traffic and high impression volume through optimized store listings" }
+          ],
+          extra: "A focused design piece meant to draw players into the brand world through visual momentum."
+        }
+      ],
       techColor: "#e8a87c",
       tech: ["Illustrator", "Photoshop", "InDesign", "After Effects"],
-      duration: { from: "2024-01", to: "2024-03" },
-      role: "Lead Designer",
+      role: "Designer",
       designProcess: [
-        { step: "Discovery", desc: "Competitor analysis, mood boards, and client workshops" },
-        { step: "Concept", desc: "3 distinct brand directions presented to stakeholders" },
-        { step: "Refinement", desc: "Chosen direction polished across 5 iteration rounds" },
-        { step: "Delivery", desc: "Complete brand book + 60+ production-ready assets" }
-      ],
-      impacts: [
-        { label: "Brand Recognition", desc: "40% increase in brand awareness within first quarter" },
-        { label: "Deliverables", desc: "60+ assets including packaging, signage, digital templates" },
-        { label: "Client Impact", desc: "Led to 4 additional project referrals in 3 months" }
-      ]
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "Collect Assets", desc: "Merge AI with asset sources for faster, smoother production workflows." },
+            { step: "Design", desc: "Create overall layouts to visualize the execution plan for stakeholders" },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ]
     },
     {
-      title: "Ai workflow",
+      title: "Ads Winning",
       desc: "Art direction and layout design for a 120-page luxury lifestyle publication.",
       detail: "Took the role of Art Director for a 120-page luxury lifestyle magazine — handling typography system, grid architecture, photo editing direction, and all editorial layouts.<br><br>The design language draws from brutalism and fashion editorial aesthetics, creating a publication that feels both authoritative and provocative.",
-      image: "assets/media/projects/img/fashion-label.svg",
-      images: ["assets/media/projects/img/fashion-label.svg"],
+      image: "Winning/PLAYABLE/BH_GL_P_BigGuySpongebob_BGOS.png",
+      image: "Winning/PLAYABLE/BH_GL_P_BigGuySpongebob_BGOS.png",
+          galleryItems: [
+        {
+          src: "Winning/PLAYABLE/BH_GL_P_CharacterOnTiles_BCFOS.png",
+          caption: "Pomo banner: Christmas event is coming! đạt 15% cvr",
+          description: "One of the game’s standout creative assets: The 'Believer' promotional banner. This project was featured on the App Store, driving a significant increase in CVR.",
+          gameplay: "https://playground.lunalabs.io/preview/232491/336843/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+          designProcess: [
+            { step: "Brief", desc: "Mapped visual trends and premium coffee positioning." },
+            { step: "Concept", desc: "Created a warm, craft-led identity anchored by aurora-inspired motifs." },
+            { step: "Refine", desc: "Iterated typography, color, and layout across packaging and digital formats." }
+          ],
+          tech: ["Illustrator", "Photoshop"],
+          impacts: [
+            { label: "CTR", desc: "15% lift from the seasonal campaign." }
+          ],
+          extra: "This creative asset was built for a premium launch campaign, emphasizing urgency and brand warmth."
+        },
+        {
+          src: "Winning/PLAYABLE/BH_GL_P_BigGuySpongebob_BGOS.png",
+          caption: "Hot song Passo bem solto",
+          description: "Promotional layout for a fresh music release designed to feel modern and premium.",
+          gameplay: "https://playground.lunalabs.io/preview/232491/334991/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+          designProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "AI Integration", desc: "everage AI to execute concepts and propose relevant design variants." },
+            { step: "Layout", desc: "Create overall layouts to visualize the execution plan for stakeholders" },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+          tech: ["InDesign", "Figma"],
+          impacts: [
+            { label: "Engagement", desc: "Increased social engagement by 22% on launch day." }
+          ],
+          extra: "Designed to support both digital and print campaigns with consistent brand clarity."
+        },
+        {
+          src: "Winning/PLAYABLE/BH_FR_P_Theme0DanceMood_CIELOS.png",
+          caption: "Hot song",
+          description: "A striking visual for a high-energy music promotion made to feel cinematic and memorable.",
+          gameplay: "https://playground.lunalabs.io/preview/269801/431842/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+          designProcess: [
+            { step: "Moodboard", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Design", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+          tech: ["Photoshop", "After Effects"],
+          impacts: [
+            { label: "Recall", desc: "Improved audience recall in campaign testing." }
+          ],
+          extra: "Created to amplify the brand story with motion-ready assets."
+        },
+        {
+          src: "Winning/PLAYABLE/DR_GL_P_ImageInBG0SongCard_TDROS0CGKPOS.png",
+          caption: "Triple release showcase",
+          description: "A brand experience frame tailored for cross-channel promotions.",
+          gameplay: "https://playground.lunalabs.io/preview/269801/504282/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+          designProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "AI Integration", desc: "everage AI to execute concepts and propose relevant design variants." },
+            { step: "Layout", desc: "Create overall layouts to visualize the execution plan for stakeholders" },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+          tech: ["Illustrator"],
+          impacts: [
+            { label: "Versatility", desc: "Assets reused across multiple campaign executions." }
+          ],
+          extra: "Built for flexibility across banners, stories, and in-app features."
+        },
+        {
+          src: "Winning/PLAYABLE/GDUC_GL_P_TrendChickenLava_SLCOCS.png",
+          caption: "Rhythm adventure tiles",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          gameplay: "https://playground.lunalabs.io/preview/269801/541050/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+          designProcess: [
+            { step: "Brief", desc: "Selected a color palette that paired premium coffee tones with bold editorial energy." },
+            { step: "Collect Assets", desc: "Combine AI and rich resource libraries to optimize production workflows." },
+            { step: "Design", desc: "Draft initial layouts to help stakeholders visualize the creative execution" },
+            { step: "Finalize", desc: "Iterate typography, color, finalize layout, embed the narrative, render lighting, and deliver assets." }
+          ],
+          tech: ["Illustrator"],
+          impacts: [
+            { label: "Immersion", desc: "Strengthened campaign storytelling through layered imagery." }
+          ],
+          extra: "A focused design piece meant to draw players into the brand world through visual momentum."
+        },
+        {
+          src: "Winning/Banner/250418_DR_JP_FGD_FE0The0Lay0GoldenWeek0NewRoad 1.png",
+          caption: "Rhythm adventure tiles",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Concept", desc: "Draft initial layouts to help stakeholders visualize the creative execution." },
+            { step: "Refine", desc: "Polishing composition, narrative, and lighting for the final design delivery" }
+          ],
+          tech: ["Illustrator"],
+          impacts: [
+            { label: "Immersion", desc: "Strengthened campaign storytelling through layered imagery." }
+          ],
+          extra: "A focused design piece meant to draw players into the brand world through visual momentum."
+        },
+        {
+          src: "Winning/Banner/250401_PI_GL_FNA_FE0TaP0OldUser 1.png",
+          caption: "Rhythm adventure tiles",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          designProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "AI Integration", desc: "everage AI to execute concepts and propose relevant design variants." },
+            { step: "Layout", desc: "Create overall layouts to visualize the execution plan for stakeholders" },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+          tech: ["Illustrator"],
+          impacts: [
+            { label: "Immersion", desc: "Strengthened campaign storytelling through layered imagery." }
+          ],
+          extra: "A focused design piece meant to draw players into the brand world through visual momentum."
+        },
+        {
+          src: "Winning/Banner/250514_GDUC_GL_B_MetGala_1200X628 2.png",
+          caption: "Rhythm adventure tiles",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Concept", desc: "Draft initial layouts to help stakeholders visualize the creative execution." },
+            { step: "Refine", desc: "Polishing composition, narrative, and lighting for the final design delivery" }
+          ],
+          tech: ["Illustrator"],
+          impacts: [
+            { label: "Immersion", desc: "Strengthened campaign storytelling through layered imagery." }
+          ],
+          extra: "A focused design piece meant to draw players into the brand world through visual momentum."
+        },
+        {
+          src: "Winning/Banner/251028_PI_GL_B_ThanksGiving_1200x1200 1.png",
+          caption: "AIscream promotion",
+          description: "Whimsical premium campaign asset with playful brand personality.",
+          designProcess: [
+            { step: "Style", desc: "Applied a playful, high-end aesthetic to a cute product concept." }
+          ],
+          tech: ["Photoshop"],
+          impacts: [
+            { label: "Brand Tone", desc: "Balanced whimsy with premium feel for a wider audience." }
+          ],
+          extra: "Created to showcase the brand's fun side while keeping the premium identity intact."
+        }
+      ],
       tech: ["InDesign", "Photoshop", "Lightroom", "Illustrator"],
-      duration: { from: "2024-04", to: "2024-07" },
       role: "Art Director",
       designProcess: [
         { step: "Research", desc: "Analyzed 40+ luxury publications for design benchmarks" },
@@ -1617,10 +2057,103 @@ const PROJECTS_DATA = {
       title: "Creative strategy",
       desc: "Complete UX/UI design system for a fintech mobile platform.",
       detail: "Designed a comprehensive digital design system for a fintech application, encompassing user research, wireframing, high-fidelity mockups, and interactive prototypes.<br><br>The design philosophy emphasizes clarity, accessibility, and trust — essential elements for managing sensitive financial interactions on mobile devices.",
-      image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-      images: ["assets/media/projects/img/fintech-app.svg"],
+      image: "Winning/PROMO/250914_DR_GL_PB_MeJalo_1920x1080 1.png",
+      image: "Winning/PROMO/250914_DR_GL_PB_MeJalo_1920x1080 1.png",
+          galleryItems: [
+        {
+          src: "PI/260302_PI_GL_PB_MontagemMiau_1920x1080 1.jpg",
+          caption: "Pomo banner: Christmas event is coming! đạt 15% cvr",
+          description: "One of the game’s standout creative assets: The 'Believer' promotional banner. This project was featured on the App Store, driving a significant increase in CVR.",
+          designProcess: [
+            { step: "Brief", desc: "Mapped visual trends and premium coffee positioning." },
+            { step: "Concept", desc: "Created a warm, craft-led identity anchored by aurora-inspired motifs." },
+            { step: "Refine", desc: "Iterated typography, color, and layout across packaging and digital formats." }
+          ],
+          tech: ["Illustrator", "Photoshop"],
+          impacts: [
+            { label: "CTR", desc: "15% lift from the seasonal campaign." }
+          ],
+          extra: "This creative asset was built for a premium launch campaign, emphasizing urgency and brand warmth."
+        },
+        {
+          src: "PI/250423_PI_GL_PBNA_FE0Lay0SSi0FreshPromo0HUSN_1920x1080 1.jpg",
+          caption: "Hot song Passo bem solto",
+          description: "Promotional layout for a fresh music release designed to feel modern and premium.",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Concept", desc: "Draft initial layouts to help stakeholders visualize the creative execution." },
+            { step: "Refine", desc: "Polishing composition, narrative, and lighting for the final design delivery" }
+          ],
+          tech: ["InDesign", "Figma"],
+          impacts: [
+            { label: "Engagement", desc: "Increased social engagement by 22% on launch day." }
+          ],
+          extra: "Designed to support both digital and print campaigns with consistent brand clarity."
+        },
+        {
+          src: "PI/250424_PI_GL_PBNA_FE0Lay0SSi0FreshPromo0Demon_1920x1080 1.jpg",
+          caption: "Hot song",
+          description: "A striking visual for a high-energy music promotion made to feel cinematic and memorable.",
+          designProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "AI Integration", desc: "Leverage AI to execute concepts and propose relevant design variants." },
+            { step: "Layout", desc: "Create overall layouts to visualize the execution plan for stakeholders." },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+          tech: ["Photoshop", "After Effects"],
+          impacts: [
+            { label: "Recall", desc: "Improved audience recall in campaign testing." }
+          ],
+          extra: "Created to amplify the brand story with motion-ready assets."
+        },
+        {
+          src: "PI/PI_GL_PBNA_FE0Lay0SSi0FreshPromo0TripleRelease_1920x1080 1.jpg",
+          caption: "Triple release showcase",
+          description: "A brand experience frame tailored for cross-channel promotions.",
+          designProcess: [
+            { step: "Brief", desc: "Define the master concept and align with stakeholders." },
+            { step: "AI Integration", desc: "Leverage AI to execute concepts and propose relevant design variants." },
+            { step: "Layout", desc: "Create overall layouts to visualize the execution plan for stakeholders." },
+            { step: "Finalize", desc: "Polishing composition, narrative, and lighting for the final design delivery." }
+          ],
+          tech: ["Illustrator"],
+          impacts: [
+            { label: "Versatility", desc: "Assets reused across multiple campaign executions." }
+          ],
+          extra: "Built for flexibility across banners, stories, and in-app features."
+        },
+        {
+          src: "PI/250809_PI_GL_PB_RhythmAdventure0TilesCharacter 1.jpg",
+          caption: "Rhythm adventure tiles",
+          description: "Interactive-style layout suited to gamified promotion and visual storytelling.",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Concept", desc: "Draft initial layouts to help stakeholders visualize the creative execution." },
+            { step: "Refine", desc: "Polishing composition, narrative, and lighting for the final design delivery" }
+          ],
+          tech: ["Illustrator"],
+          impacts: [
+            { label: "Immersion", desc: "Strengthened campaign storytelling through layered imagery." }
+          ],
+          extra: "A focused design piece meant to draw players into the brand world through visual momentum."
+        },
+        {
+          src: "PI/250723_PI_GL_PB_Aiscream0kawaii_1920x1080 1.jpg",
+          caption: "AIscream promotion",
+          description: "Whimsical premium campaign asset with playful brand personality.",
+          designProcess: [
+            { step: "Brief", desc: "Brainstorm overall concepts and ensure stakeholder alignment" },
+            { step: "Concept", desc: "Draft initial layouts to help stakeholders visualize the creative execution." },
+            { step: "Refine", desc: "Polishing composition, narrative, and lighting for the final design delivery" }
+          ],
+          tech: ["Photoshop"],
+          impacts: [
+            { label: "Brand Tone", desc: "Balanced whimsy with premium feel for a wider audience." }
+          ],
+          extra: "Created to showcase the brand's fun side while keeping the premium identity intact."
+        }
+      ],
       tech: ["Figma", "Protopie", "Adobe XD", "Illustrator"],
-      duration: { from: "2024-08", to: "2024-12" },
       role: "Lead UX/UI Designer",
       designProcess: [
         { step: "Research", desc: "User interviews and competitive analysis of 15+ fintech apps" },
@@ -1643,11 +2176,13 @@ const PROJECTS_DATA = {
         {
           title: "PI_Promotional Banner",
           desc: "Minimal logo and brand guidelines for a B2B SaaS company.",
-          detail: "Designed a clean, modular logo mark built on geometric precision — communicating flow, connectivity, and speed.",
+          detail: "Creative assets used for game promotional events. Promotional banners help boost store conversion rates during these events.",
           image: "PI/260302_PI_GL_PB_MontagemMiau_1920x1080 1.jpg",
           galleryImages: [
+            "PI/MagicTiles3Piano-Game_1443446174_20250624_AppStore_AppsGamesWatch 1.png",
             "PI/250423_PI_GL_PBNA_FE0Lay0SSi0FreshPromo0HUSN_1920x1080 1.jpg",
             "PI/250424_PI_GL_PBNA_FE0Lay0SSi0FreshPromo0Demon_1920x1080 1.jpg",
+            "PI/PI_GL_PBNA_FE0Lay0SSi0FreshPromo0TripleRelease_1920x1080 1.jpg",
             "PI/250809_PI_GL_PB_RhythmAdventure0TilesCharacter 1.jpg",
             "PI/250723_PI_GL_PB_Aiscream0kawaii_1920x1080 1.jpg",
             "PI/250820_PI_GL_PB_Cathoven_1920x1080 1.jpg",
@@ -1662,123 +2197,216 @@ const PROJECTS_DATA = {
 
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "Feature Apple Store promote new song Believer by Imagine Dragons",
+            "PI_GL_PBNA_FE0Lay0SSi0FreshPromo0HUSN",
+            "PI_GL_PBNA_FE0Lay0SSi0FreshPromo0Demon",
+            "PI_GL_PBNA_FE0Lay0SSi0FreshPromo0TripleRelease",
+            "250809_PI_GL_PB_RhythmAdventure0TilesCharacter",
+            "250723_PI_GL_PB_Aiscream0kawaii_",
+            "250820_PI_GL_PB_Cathoven",
+            "251028_PI_GL_PB_ThanksGiving",
+            "251120_PI_GL_PB_WinterPass",
+            "260114_PI_GL_PB_Whiplash",
+            "260310_PI_GL_PB_JasracAlbum",
+            "260210_PI_GL_PB_WomenDay",
+            "260302_PI_GL_PB_MontagemMiau",
+            "260406_PI_GL_PB_NobatidaoFunk",
+            "260511_PI_GL_PB_RhythmMarch0Jungle"
           ],
-          tech: ["Illustrator", "Figma"],
-          duration: { from: "2024-02", to: "2024-02" },
-          role: "Brand Designer",
+          galleryDescriptions: [
+            "One of the game’s standout creative assets: The 'Believer' promotional banner. This project was featured on the App Store, driving a significant increase in CVR",
+            "When beauty turns to heartbreak. Discover Anuv Jain's hit 'Husn'",
+            "Exclusive Imagine Dragons track now live in 'Demon'!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!",
+            "Get ready to melt! Unlock the sweet vibes of 'AIscream' today!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Exclusive track update! Play it now only in-game!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Rhythm game fans, this is the ultimate track you absolutely cannot miss!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "No Batidão' has arrived! Step up and crush this wild, rebellious beat!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
+          ],
+          tech: ["Photoshop", "Figma", "Chat GPT", "Gemini", "Shalker AI"],
+          role: "Graphic Designer",
           designProcess: [
-            { step: "Brief", desc: "Client workshops and competitor landscape analysis" },
-            { step: "Sketching", desc: "20+ rough concepts refined to 5 directions" },
-            { step: "Digital", desc: "3 polished options with color variants" },
-            { step: "Handoff", desc: "Full brand kit with usage guidelines" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
           title: "PI_Screenshot",
           desc: "Holistic wellness brand — logo, packaging, and brand voice.",
           detail: "A pastel-forward wellness brand identity balancing scientific credibility with warm, approachable aesthetics.",
-          image: "PI/260302_PI_GL_PB_MontagemMiau_1920x1080 1.jpg",
+          image: "PI/SS/cover.png",
           galleryImages: [
-            "PI/250819_PI_JP_S_Colorful0Aiscream2.png",
-            "PI/260121_PI_GL_S_Valentine0PhonkTop1Creative.png",
-            "PI/260121_PI_GL_S_Valentine0PhonkTop1Creative.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+            "PI/SS/250819_PI_JP_S_Colorful0Aiscream_SS4 1.jpg",
+            "PI/SS/260410_PI_JP_S_GoldenWeek0NewConcept.png",
+            "PI/SS/260121_PI_GL_S_Valentine0PhonkTop1Creative2.png",
+            "PI/SS/SS_Dark theme.png",
+            "PI/SS/260202_PI_BR_S_Carnival0GlobalFestive0iOS.png",
+            "PI/SS/260410_PI_GL_S_GoldenWeek0NewConcept.png",
+            "PI/SS/270325_PI_KR_SNA_FE0Dev0Loc025SUltra0Korean.png",
+            "PI/SS/250924_PI_GL_S_KPopDemonHunters.png",
+            "PI/SS/xmas_SS.png"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "250819_PI_JP_S_Colorful0Aiscream",
+            "260410_PI_JP_S_GoldenWeek0NewConcept",
+            "260121_PI_GL_S_Valentine0PhonkTop1Creative",
+            "PI_GL_S_NewDesign0DarkTheme0TextOnTop",
+            "PI_BR_S_Carnival0GlobalFestive0iOS",
+            "PI_GL_S_GoldenWeek0NewConcept",
+            "PI_KR_SNA_FE0Dev0Loc025SUltra0Korean",
+            "PI_GL_S_KPopDemonHunters",
+            "PI_GL_S_Xmas"
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
+          tech: ["Photoshop", "Illustration", "Gemini", "Chat GPT", "Shalker"],
           role: "Lead Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
           title: "PI_Ads Banner",
           desc: "Full rebrand for a premium architecture firm.",
-          detail: "Elevated a 20-year-old architecture studio brand from dated to bold — keeping heritage cues while projecting forward-thinking design.",
-          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          detail: "Integrating AI to mass-produce game banners.",
+          image: "PI/Banner/250505_PI_GL_BNA_VI0SSi0Demon_1200x628 1.png",
           galleryImages: [
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+            "PI/Banner/250319_PI_GL_BNA_FE0GFe0BattleTournament_1200x628 1.png",
+            "PI/Banner/250403_PI_GL_BNA_FE0Gra0The0NotLikeUs_1200x628 1.png",
+            "PI/Banner/250505_PI_GL_BNA_VI0SSi0Demon_1200x628 1.png",
+            "PI/Banner/250915_PI_GL_B_VIPTrial_1200x628 1.png",
+            "PI/Banner/250613_PI_GL_B_Summer0MusicVibes_1200x628 1.png",
+            "PI/Banner/250613_PI_GL_B_SquidGame30Younghee_1200x628 1.png",
+            "PI/Banner/250515_PI_GL_B_LavaChicken_1200x628 1.png",
+            "PI/Banner/250515_PI_GL_B_Tungtungsahur_1200x628 1.png",
+            "PI/Banner/250528_PI_GL_B_Aiscream0Customtiler_1200x628 1.png",
+            "PI/Banner/250530_PI_GL_B_Balerinna0Cappucinna_1200x628 1.png",
+            "PI/Banner/250613_PI_GL_B_SquidGame30XO_1200X628 1.png",
+            "PI/Banner/250613_PI_GL_B_cyberpunk0CityNight_1200x628 1.png",
+            "PI/Banner/250613_PI_GL_B_arcade0pixelart_1200x628 1.png"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken",
+            "PI_GL_B_Tungtungsahur",
+            "PI_GL_B_Aiscream0Customtiler",
+            "PI_GL_B_Balerinna0Cappucinna_",
+            "PI_GL_B_SquidGame30XO",
+            "PI_GL_B_cyberpunk0CityNight",
+            "PI_GL_B_arcade0pixelart"
+
           ],
-          tech: ["Illustrator", "InDesign", "Figma"],
-          duration: { from: "2023-06", to: "2023-08" },
-          role: "Brand Strategist + Designer",
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Exclusive Imagine Dragons track now live in 'Demon'!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Join the vibrant rhythm alongside the square blocks of Minecraft.",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Get ready to melt! Unlock the sweet vibes of 'AIscream' today!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker AI"],
+          role: "Graphic Designer",
           designProcess: [
-            { step: "Audit", desc: "Brand audit of existing identity and positioning" },
-            { step: "Strategy", desc: "New brand positioning and messaging framework" },
-            { step: "Visual Identity", desc: "Logo evolution and design system rebuild" },
-            { step: "Launch", desc: "Full relaunch across digital and print" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
           title: "PI_Playable",
           desc: "Vibrant festival brand with wayfinding and merch design.",
           detail: "Created a high-energy visual identity for a street food festival — built for chaos, color, and community.",
-          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          image: "PI/Playable/PI_P_BLADE FURY.png",
           galleryImages: [
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+            "PI/Playable/PI_P_BLADE FURY.png",
+            "PI/Playable/Let them have it.png",
+            "PI/Playable/PI_P_Poloco.png",
+            "PI/Playable/PI_PI_BUDA DYGO.png",
+            "PI/Playable/Pigeon pop.png",
+            "PI/Playable/Montagem Rebola.png",
+            "PI/Playable/Round and Round.png",
+            "PI/Playable/Moonlit.png",
+            "PI/Playable/Miduecho.png",
+            "PI/Playable/Night dance.png",
+            "PI/Playable/Tung tung tung.png",
+            "PI/Playable/HAREHARE YA.png"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "BLADE FURY",
+            "LET THEM HAVE IT",
+            "BUDA DYGO",
+            "POLOCO",
+            "PIGEON POP",
+            "MONTAGEM REBOLA",
+            "ROUND AND ROUND",
+            "MOONLIT FLOOR",
+            "MIDU ECHOING",
+            "NIGHT DANCE",
+            "TUNG TUNG TUNG",
+            "HAREHARE YA"
+          ],
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "That viral hit you love? It’s finally in-game. Ready to test your reflexes?",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "New song alert! Clear the stages daily to hoard your exclusive rewards!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "Immerse yourself in our game's latest custom track right now!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
           ],
           galleryPlays: [
+            "https://playground.lunalabs.io/preview/232491/336843/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/232491/334991/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/269801/431842/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/269801/504282/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/385573/541050/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/340182/500632/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/232491/335146/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/340182/454732/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/269801/576903/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
             "https://playground.lunalabs.io/preview/269801/586899/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
-            "https://playground.lunalabs.io/preview/269801/586899/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
-            "https://example.com/gameplay/250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080"
+            "https://playground.lunalabs.io/preview/222968/342082/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/232491/334234/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b"
+
+           
           ],
-          tech: ["Illustrator", "Photoshop", "After Effects"],
+          tech: ["Illustrator", "Photoshop", "Playround Luna", "Gemini", "Shalker AI"],
           duration: { from: "2023-03", to: "2023-05" },
           role: "Designer",
           designProcess: [
-            { step: "Concept", desc: "Bold, chaotic visual direction with pop art references" },
-            { step: "System", desc: "Scalable pattern and color system for all surfaces" },
-            { step: "Wayfinding", desc: "Signage and map design for 40+ vendors" },
-            { step: "Merch", desc: "T-shirts, tote bags, and poster suite" }
+           { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Layout", desc: "Finalize layouts" },
+            { step: "Upload the asset to Luna.", desc: "Insert the assets into the corresponding fields in Luna to make the playable work." },
+            { step: "Size Optimization and QC", desc: "Check playable quality and file size" }
           ]
         }
       ]
@@ -1791,108 +2419,175 @@ const PROJECTS_DATA = {
           title: "DR_Promotional Banner",
           desc: "Data-rich 80-page annual report designed for a hedge fund.",
           detail: "Transformed complex financial data into an elegant, readable 80-page annual report — balancing density with breathability.",
-          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          image: "DR/Promo/260119_DR_GL_PB_Valentine0Neighborlover 1.png",
           galleryImages: [
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+            "DR/Promo/250730_DR_GL_PB_FriendshipDay_1920x1080 1.png",
+            "DR/Promo/250914_DR_GL_PB_MeJalo_1920x1080 1.png",
+            "DR/Promo/251001_DR_GL_PB_4Lanes_1920x1080 1.png",
+            "DR/Promo/251013_DR_GL_PB_Halloween0NewSkin_1920x1080 1.png",
+            "DR/Promo/251029_DR_GL_PB_ThanksGiving_1920x1080 1.png",
+            "DR/Promo/251111_DR_GL_PB_Xmas_1920x1080 1.png",
+            "DR/Promo/260119_DR_GL_PB_Valentine0Neighborlover 1.png",
+            "DR/Promo/260324_DR_GL_PB_Easter_1920x1080 1.png",
+            "DR/Promo/260401_DR_GL_PB_CherryBlossom_1920x1080 1.png",
+            "DR/Promo/260411_DR_GL_PB_PromoSong0Nonsense_1920x1080 1.png",
+            "DR/Promo/260512_DR_GL_PB_SongPromote0TrilliumHardtekk_1920x0180 1.png",
+            "DR/Promo/260601_DR_GL_PB_Ocean0Race_1920x1080 1.png",
+            "DR/Promo/260602_DR_GL_PB_SongPromote0PassoBemSolto_1920x1080 1.png",
+            "DR/Promo/260609_DR_GL_PB_SongPromote0ItsMyLife_1920x1080 1.png",
+            "DR/Promo/260612_DR_GL_PB_SongPromote0SportsCar_1920x1080 1.png",
+            "DR/Promo/260622_DR_GL_PB_SongPromote0Aiduaemve_1920x1080 1.png"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "DR_GL_PB_FriendshipDay",
+            "DR_GL_PB_MeJalo",
+            "DR_GL_PB_4Lanes",
+            "DR_GL_PB_Halloween",
+            "DR_GL_PB_ThanksGiving",
+            "DR_GL_PB_Xmas",
+            "DR_GL_PB_Valentine",
+            "DR_GL_PB_Easter",
+            "DR_GL_PB_CherryBlossom",
+            "DR_GL_PB_PromoSong0Nonsense",
+            "DR_GL_PB_SongPromote0TrilliumHardtekk",
+            "DR_GL_PB_Ocean",
+            "DR_GL_PB_SongPromote0PassoBemSolto",
+            "DR_GL_PB_SongPromote0ItsMyLife",
+            "DR_GL_PB_SongPromote0SportsCar",
+            "DR_GL_PB_SongPromote0Aiduaemve"
+
+          ],
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "That viral hit you love? It’s finally in-game. Ready to test your reflexes?",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "New song alert! Clear the stages daily to hoard your exclusive rewards!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "Immerse yourself in our game's latest custom track right now!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
           ],
           tech: ["Illustrator", "Photoshop", "InDesign"],
           duration: { from: "2023-09", to: "2023-11" },
           role: "Lead Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
           title: "DR_Screenshot",
           desc: "90-page exhibition catalogue for a contemporary art show.",
           detail: "Designed an editorial catalogue that functioned as both documentation and art object — printed on uncoated stock with bold typographic interventions.",
-          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          image: "DR/SS/250923_DR_GL_S_4Lanes.png",
           galleryImages: [
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+            "DR/SS/250909_DR_GL_S_NewUI.png",
+            "DR/SS/250923_DR_GL_S_4Lanes.png",
+            "DR/SS/251019_DR_GL_S_Halloween.png",
+            "DR/SS/251218_DR_GL_S_NewYear.png",
+            "DR/SS/250411_DR_RU_S_LocalizeRU.png",
+            "DR/SS/260604_DR_GL_S_Ocean0Race.png",
+            "DR/SS/260616_DR_JP_S_Galaxy0Anime0Girl.png",
+            "DR/SS/260624_DR_RU_S_OceanRace.png"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "DR_GL_S_NewUI",
+            "DR_GL_S_4Lanes",
+            "DR_GL_S_Halloween",
+            "DR_GL_S_NewYear",
+            "DR_RU_S_LocalizeRU",
+            "DR_GL_S_OceanRace",
+            "DR_JP_S_GalaxyAnimeGirl",
+            "DR_RU_S_OceanRace"
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
-          role: "Lead Designer",
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "That viral hit you love? It’s finally in-game. Ready to test your reflexes?",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "New song alert! Clear the stages daily to hoard your exclusive rewards!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "Immerse yourself in our game's latest custom track right now!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker AI"],
+          role: "Graphic Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
           title: "DR_Ads Banner",
           desc: "Premium tea packaging for 12 SKUs across 3 product lines.",
           detail: "Designed a packaging system rooted in botanical illustration and Japanese minimalism — each product line using a distinct illustrative motif.",
-          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          image: "DR/Banner/260425_DR_GL_B_Phonk0Galaxy_1200x628 1.png",
           galleryImages: [
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+            "DR/Banner/260424_DR_GL_B_Phonk0Galaxy3 1.png",
+            "DR/Banner/250411_DR_RU_F_LocalizeRU 1.png",
+            "DR/Banner/250418_DR_JP_FGD_FE0The0Lay0GoldenWeek0NewRoad 1.png",
+            "DR/Banner/251114_DR_GL_F_Xmas 1.png",
+            "DR/Banner/260424_DR_GL_B_Phonk0Galaxy2 1.png",
+            "DR/Banner/260425_DR_GL_B_Phonk0Galaxy_1200x628 1.png",
+            "DR/Banner/260619_DR_GL_B_WorldCup0Iterate0OceanRace3 1.png"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "DR_GL_B_Phonk0Galaxy3",
+            "DR_GL_B_LocalizeRU",
+            "DR_GL_B_GoldenWeek",
+            "DR_GL_B_Xmas",
+            "DR_GL_B_Phonk0Galaxy2",
+            "DR_GL_B_Phonk0Galaxy_1200x628",
+            "DR_GL_B_WorldCup0Iterate0OceanRace3"
+
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
-          role: "Lead Designer",
+          galleryDescriptions: [
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "That viral hit you love? It’s finally in-game. Ready to test your reflexes?",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "New song alert! Clear the stages daily to hoard your exclusive rewards!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "Immerse yourself in our game's latest custom track right now!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker AI"],
+          role: "Graphic Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
           title: "DR_Playable",
           desc: "Monthly poster series for a jazz club's annual calendar.",
           detail: "12 expressive typographic posters for a jazz club — each month exploring a different visual riff on jazz genre and mood.",
-          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          image: "DR/Playable/Valentine IEC.png",
           galleryImages: [
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "DR/Playable/Valentine IEC.png",
+            "DR/Playable/Halloween IEC.png",
+            "DR/Playable/Violento.png",
+            "DR/Playable/Meow Meow.png",
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
@@ -1901,23 +2596,44 @@ const PROJECTS_DATA = {
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "Valentine IEC",
+            "Halloween IEC",
+            "Violento",
+            "Meow Meow",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken"
+
+          ],
+          galleryDescriptions: [
+            "That viral hit you love? It’s finally in-game. Ready to test your reflexes?",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "New song alert! Clear the stages daily to hoard your exclusive rewards!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "Immerse yourself in our game's latest custom track right now!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
           ],
           galleryPlays: [
-            "https://example.com/gameplay/251118_BH_GL_PB_Christmas2025_3",
-            "https://example.com/gameplay/250826_BH_GL_PB_PassoBemSolto_1920x1080",
-            "https://example.com/gameplay/250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080"
+            "https://playground.lunalabs.io/preview/239341/470534/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/294469/395020/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/421683/606358/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
+            "https://playground.lunalabs.io/preview/421683/616506/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
-          role: "Lead Designer",
+          tech: ["Illustrator", "Photoshop", "Playround Luna", "Gemini", "Shalker AI"],
+          duration: { from: "2023-03", to: "2023-05" },
+          role: "Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+           { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Layout", desc: "Finalize layouts" },
+            { step: "Upload the asset to Luna.", desc: "Insert the assets into the corresponding fields in Luna to make the playable work." },
+            { step: "Size Optimization and QC", desc: "Check playable quality and file size" }
           ]
         }
       ]
@@ -1930,64 +2646,92 @@ const PROJECTS_DATA = {
           title: "BH_Promotional Banner",
           desc: "Full social media visual campaign across IG, TikTok, and Pinterest.",
           detail: "Designed 80+ social assets for a streetwear brand's seasonal drop — templates, launch animations, and story sequences.",
-          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          image: "BH/PROMO/250717_BH_GL_PB_FeatureArtist0OliviaRodrigo_1920x1080 1.png",
           galleryImages: [
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+            "BH/PROMO/250717_BH_GL_PB_FeatureArtist0OliviaRodrigo_1920x1080 1.png",
+            "BH/PROMO/250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080 1.png",
+            "BH/PROMO/250826_BH_GL_PB_PassoBemSolto_1920x1080 1.png",
+            "BH/PROMO/251118_BH_GL_PB_Christmas2025_3 1.png",
+            "BH/PROMO/260504_BH_GL_PB_Phonk0Album_1920x1080 1.png",
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_arcade0pixelart"
+
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
-          role: "Lead Designer",
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "That viral hit you love? It’s finally in-game. Ready to test your reflexes?",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "New song alert! Clear the stages daily to hoard your exclusive rewards!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "Immerse yourself in our game's latest custom track right now!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker AI"],
+          role: "Graphic Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
           title: "BH_Screenshot",
           desc: "Mobile app UI design for a gamified habit tracker.",
           detail: "Full UI design for a habit-building app using dark mode-first aesthetic with RPG progression mechanics — from wireframes to high-fidelity prototypes.",
-          image: "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
+          image: "BH/SS/Theme sence 1.png",
           galleryImages: [
-            "251118_BH_GL_PB_Christmas2025_3.png",
-            "250826_BH_GL_PB_PassoBemSolto_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg",
-            "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
+            "BH/SS/260324_BH_GL_S_Easter0SeasonalFocus.png",
+            "BH/SS/260324_BH_GL_S_Easter0SeasonalFocus1.png",
+            "BH/SS/250804_BH_GL_S_NewUI.png",
+            "BH/SS/Ball sence 1.png",
+            "BH/SS/Booster' 1.png",
+            "BH/SS/Pick Song sence 1.png",
+            "BH/SS/Theme sence 1.png",
+            "BH/SS/Outro 1.png"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "BH_GL_S_Easter0SeasonalFocus",
+            "BH_GL_S_Easter0SeasonalFocus1",
+            "BH_GL_S_NewUI",
+            "BH_GL_S_BallScene",
+            "BH_GL_S_Booster",
+            "BH_GL_S_PickSongScene",
+            "BH_GL_S_ThemeScene",
+            "BH_GL_S_Outro"
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
-          role: "Lead Designer",
+          galleryDescriptions: [
+            
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "New song alert! Clear the stages daily to hoard your exclusive rewards!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "Immerse yourself in our game's latest custom track right now!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker AI"],
+          role: "Graphic Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
@@ -2008,23 +2752,49 @@ const PROJECTS_DATA = {
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken",
+            "PI_GL_B_Tungtungsahur",
+            "PI_GL_B_Aiscream0Customtiler",
+            "PI_GL_B_Balerinna0Cappucinna_",
+            "PI_GL_B_SquidGame30XO",
+            "PI_GL_B_cyberpunk0CityNight",
+            "PI_GL_B_arcade0pixelart"
+
+          ],
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "That viral hit you love? It’s finally in-game. Ready to test your reflexes?",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "New song alert! Clear the stages daily to hoard your exclusive rewards!",
+            "Get an earful of our brand-new exclusive track—dive in today!",
+            "Immerse yourself in our game's latest custom track right now!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
           ],
           galleryPlays: [
             "https://playground.lunalabs.io/preview/269801/586899/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
             "https://playground.lunalabs.io/preview/269801/586899/cce4cef71e551f6aff7b9bfa1365fa339bdcfe375a9311694c2f1f1eb0b6423b",
             "https://example.com/gameplay/250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080"
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
-          role: "Lead Designer",
+          tech: ["Illustrator", "Photoshop", "Playround Luna", "Gemini", "Shalker AI"],
+          duration: { from: "2023-03", to: "2023-05" },
+          role: "Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+           { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Layout", desc: "Finalize layouts" },
+            { step: "Upload the asset to Luna.", desc: "Insert the assets into the corresponding fields in Luna to make the playable work." },
+            { step: "Size Optimization and QC", desc: "Check playable quality and file size" }
           ]
         }
       ]
@@ -2051,18 +2821,43 @@ const PROJECTS_DATA = {
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken",
+            "PI_GL_B_Tungtungsahur",
+            "PI_GL_B_Aiscream0Customtiler",
+            "PI_GL_B_Balerinna0Cappucinna_",
+            "PI_GL_B_SquidGame30XO",
+            "PI_GL_B_cyberpunk0CityNight",
+            "PI_GL_B_arcade0pixelart"
+
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
-          role: "Lead Designer",
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Exclusive Imagine Dragons track now live in 'Demon'!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Join the vibrant rhythm alongside the square blocks of Minecraft.",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Get ready to melt! Unlock the sweet vibes of 'AIscream' today!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker AI"],
+          role: "Graphic Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
@@ -2083,18 +2878,43 @@ const PROJECTS_DATA = {
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken",
+            "PI_GL_B_Tungtungsahur",
+            "PI_GL_B_Aiscream0Customtiler",
+            "PI_GL_B_Balerinna0Cappucinna_",
+            "PI_GL_B_SquidGame30XO",
+            "PI_GL_B_cyberpunk0CityNight",
+            "PI_GL_B_arcade0pixelart"
+
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
-          role: "Lead Designer",
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Exclusive Imagine Dragons track now live in 'Demon'!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Join the vibrant rhythm alongside the square blocks of Minecraft.",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Get ready to melt! Unlock the sweet vibes of 'AIscream' today!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker AI"],
+          role: "Graphic Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
@@ -2115,18 +2935,43 @@ const PROJECTS_DATA = {
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken",
+            "PI_GL_B_Tungtungsahur",
+            "PI_GL_B_Aiscream0Customtiler",
+            "PI_GL_B_Balerinna0Cappucinna_",
+            "PI_GL_B_SquidGame30XO",
+            "PI_GL_B_cyberpunk0CityNight",
+            "PI_GL_B_arcade0pixelart"
+
           ],
-          tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
-          role: "Lead Designer",
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Exclusive Imagine Dragons track now live in 'Demon'!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Join the vibrant rhythm alongside the square blocks of Minecraft.",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Get ready to melt! Unlock the sweet vibes of 'AIscream' today!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
+          ],
+          tech: ["Illustrator", "Photoshop", "Gemini", "Chat GPT", "Shalker AI"],
+          role: "Graphic Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
@@ -2147,9 +2992,35 @@ const PROJECTS_DATA = {
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken",
+            "PI_GL_B_Tungtungsahur",
+            "PI_GL_B_Aiscream0Customtiler",
+            "PI_GL_B_Balerinna0Cappucinna_",
+            "PI_GL_B_SquidGame30XO",
+            "PI_GL_B_cyberpunk0CityNight",
+            "PI_GL_B_arcade0pixelart"
+
+          ],
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Exclusive Imagine Dragons track now live in 'Demon'!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Join the vibrant rhythm alongside the square blocks of Minecraft.",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Get ready to melt! Unlock the sweet vibes of 'AIscream' today!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
           ],
           galleryPlays: [
             "https://example.com/gameplay/251118_BH_GL_PB_Christmas2025_3",
@@ -2157,7 +3028,6 @@ const PROJECTS_DATA = {
             "https://example.com/gameplay/250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080"
           ],
           tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
           role: "Lead Designer",
           designProcess: [
             { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
@@ -2190,18 +3060,43 @@ const PROJECTS_DATA = {
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken",
+            "PI_GL_B_Tungtungsahur",
+            "PI_GL_B_Aiscream0Customtiler",
+            "PI_GL_B_Balerinna0Cappucinna_",
+            "PI_GL_B_SquidGame30XO",
+            "PI_GL_B_cyberpunk0CityNight",
+            "PI_GL_B_arcade0pixelart"
+
+          ],
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Exclusive Imagine Dragons track now live in 'Demon'!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Join the vibrant rhythm alongside the square blocks of Minecraft.",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Get ready to melt! Unlock the sweet vibes of 'AIscream' today!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
           ],
           tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
           role: "Lead Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
@@ -2222,18 +3117,43 @@ const PROJECTS_DATA = {
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken",
+            "PI_GL_B_Tungtungsahur",
+            "PI_GL_B_Aiscream0Customtiler",
+            "PI_GL_B_Balerinna0Cappucinna_",
+            "PI_GL_B_SquidGame30XO",
+            "PI_GL_B_cyberpunk0CityNight",
+            "PI_GL_B_arcade0pixelart"
+
+          ],
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Exclusive Imagine Dragons track now live in 'Demon'!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Join the vibrant rhythm alongside the square blocks of Minecraft.",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Get ready to melt! Unlock the sweet vibes of 'AIscream' today!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
           ],
           tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
           role: "Lead Designer",
           designProcess: [
-            { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
-            { step: "Identity", desc: "Logo, wordmark, and icon system design" },
-            { step: "Packaging", desc: "7 product lines with 3D mockups" },
-            { step: "Guide", desc: "32-page brand standards document" }
+            { step: "Brief", desc: "Confirm and clarify brief requirements" },
+            { step: "Sketching", desc: "Sketch layouts and collect source assets" },
+            { step: "Design Layout", desc: "Develop the overall layout" },
+            { step: "finalize", desc: "Render and finalize visuals" }
           ]
         },
         {
@@ -2254,12 +3174,37 @@ const PROJECTS_DATA = {
             "250730_BH_GL_PB_FeatureArtist0ImagineDragons_1920x1080.jpg"
           ],
           galleryCaptions: [
-            "Pomo banner: Christmas event is coming! đạt 15% cvr",
-            "Hot song Passo bem solto",
-            "Hot song"
+            "PI_GL_BNA_FE0GFe0BattleTournament",
+            "PI_GL_BNA_FE0Gra0The0NotLikeUs",
+            "PI_GL_BNA_VI0SSi0Demon",
+            "PI_GL_B_VIPTrial",
+            "PI_GL_B_Summer0MusicVibes",
+            "PI_GL_B_SquidGame30Younghee",
+            "PI_GL_B_LavaChicken",
+            "PI_GL_B_Tungtungsahur",
+            "PI_GL_B_Aiscream0Customtiler",
+            "PI_GL_B_Balerinna0Cappucinna_",
+            "PI_GL_B_SquidGame30XO",
+            "PI_GL_B_cyberpunk0CityNight",
+            "PI_GL_B_arcade0pixelart"
+
+          ],
+          galleryDescriptions: [
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Exclusive Imagine Dragons track now live in 'Demon'!",
+            "Calling all rhythm masters! Prove your skills on our latest song drop!",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Think you are a rhythm master? Come conquer our newest track!",
+            "Join the vibrant rhythm alongside the square blocks of Minecraft.",
+            "New event drop! Join now to score rare loot and unlock exclusive tracks!",
+            "Get ready to melt! Unlock the sweet vibes of 'AIscream' today!",
+            "New song promo event is LIVE! Dash in and experience the beat now!",
+            "Are you ready to take on the music challenge and win a cash prize?",
+            "Exclusive track update! Play it now only in-game!",
+            "New event is live! Rush in for rare items and exclusive song unlocks!"
           ],
           tech: ["Illustrator", "Photoshop", "InDesign"],
-          duration: { from: "2023-09", to: "2023-11" },
           role: "Lead Designer",
           designProcess: [
             { step: "Mood Board", desc: "Curated reference library across 5 aesthetic directions" },
@@ -2458,11 +3403,17 @@ function renderHighlights() {
   const wrap = document.getElementById('highlights-wrap');
   PROJECTS_DATA.highlights.forEach((h, i) => {
     const icons = ['bi-cup-hot-fill', 'bi-journal-richtext'];
+    const thumbSrc = h.image || h.images?.[0] || h.galleryImages?.[0] || '';
+    const mediaHtml = h.video
+      ? `<video src="${h.video}" autoplay muted loop playsinline></video>`
+      : thumbSrc
+        ? `<img src="${thumbSrc}" alt="${h.title}" />`
+        : `<div class="img-placeholder">${imgPlaceholder(h.title, icons[i] || 'bi-image')}</div>`;
     const div = document.createElement('div');
     div.className = 'highlight-item reveal' + (i % 2 === 0 ? '' : '');
     div.innerHTML = `
       <div class="highlight-media">
-        ${imgPlaceholder(h.title, icons[i] || 'bi-image')}
+        ${mediaHtml}
         <div class="media-overlay"></div>
       </div>
       <div class="highlight-info">
@@ -2648,17 +3599,81 @@ function openProjectModal(idx) {
   showModal(project);
 }
 
+function renderSelectedImageDetails(container, project, item) {
+  if (!container) return;
+  const description = item?.description || project?.detail || project?.desc || '';
+  const processSteps = item?.designProcess || project?.designProcess || [];
+  const tools = item?.tech || project?.tech || [];
+  const impacts = Array.isArray(item?.impacts) ? item.impacts : Array.isArray(project?.impacts) ? project.impacts : [];
+  const extraContent = item?.extra || project?.extra || '';
+
+  let html = '';
+  if (description) {
+    html += `<div class="modal-section-title">🖼 Image Description</div>
+    <div class="modal-desc" style="margin-bottom:18px;">${description}</div>`;
+  }
+
+  if (processSteps.length) {
+    html += `<div class="modal-section-title">🎯 Design Process</div>
+    <div class="process-steps">
+    ${processSteps.map((s, i) => `
+      <div class="process-step">
+        <div class="process-step-label">0${i+1}. ${s.step}</div>
+        <div style="color:var(--muted);font-size:0.8rem;">${s.desc}</div>
+      </div>
+    `).join('')}
+    </div>`;
+  }
+
+  if (tools.length) {
+    html += `<div class="modal-section-title">🛠 Tools Used</div>
+    <div class="tech-tags" style="margin-top:0;">${makeTechTags(tools)}</div>`;
+  }
+
+  if (impacts.length) {
+    html += `<div class="modal-section-title">💡 Key Results</div>
+    <div class="impact-list">
+    ${impacts.map(im => `
+      <div class="impact-item">
+        <div class="impact-label">${im.label}</div>
+        <div class="impact-desc">${im.desc}</div>
+      </div>
+    `).join('')}
+    </div>`;
+  }
+
+  if (extraContent) {
+    html += `<div class="modal-section-title">📝 Additional Notes</div>
+    <div class="modal-desc">${extraContent}</div>`;
+  }
+
+  if (!html) {
+    html = `<div class="modal-desc">No image-specific details available yet.</div>`;
+  }
+
+  container.innerHTML = html;
+}
+
 function showModal(p) {
   const overlay = document.getElementById('project-modal');
   const body = document.getElementById('modal-body');
   const titleBar = document.getElementById('modal-title-bar');
   titleBar.textContent = p.title;
 
-  const images = p.galleryItems ? p.galleryItems.slice(0, 20) : (p.galleryImages || p.images || (p.image ? [p.image] : [])).slice(0, 20).map((src, index) => ({
-    src,
-    caption: (p.galleryCaptions && p.galleryCaptions[index]) || `Image ${index + 1}`,
-    gameplay: (p.galleryPlays && p.galleryPlays[index]) || null
-  }));
+  const rawImages = p.galleryItems ? p.galleryItems : (p.galleryImages || p.images || (p.image ? [p.image] : []));
+  const images = rawImages.slice(0, 20).map((src, index) => {
+    const item = typeof src === 'object' && src !== null ? src : null;
+    return {
+      src: item?.src || item?.image || src,
+      caption: item?.caption || (p.galleryCaptions && p.galleryCaptions[index]) || `Image ${index + 1}`,
+      description: item?.description || (p.galleryDescriptions && p.galleryDescriptions[index]) || null,
+      designProcess: item?.designProcess || (p.galleryImageDesignProcess && p.galleryImageDesignProcess[index]) || null,
+      tech: item?.tech || (p.galleryImageTools && p.galleryImageTools[index]) || null,
+      impacts: item?.impacts || (p.galleryImageImpacts && p.galleryImageImpacts[index]) || null,
+      extra: item?.extra || (p.galleryImageExtras && p.galleryImageExtras[index]) || null,
+      gameplay: item?.gameplay || (p.galleryPlays && p.galleryPlays[index]) || null
+    };
+  });
 
   let html = `
     <div class="modal-split">
@@ -2677,23 +3692,11 @@ function showModal(p) {
           </div>
         `}
         <div class="modal-meta">
-          <div class="meta-badge"><span>⏱</span> ${formatDuration(p.duration)}</div>
           <div class="meta-badge"><span>🎨</span> ${p.role || 'Designer'}</div>
         </div>
+        <div id="modal-image-details"></div>
         <div class="modal-desc">${p.detail || p.desc}</div>
   `;
-
-  if (p.designProcess && p.designProcess.length) {
-    html += `<div class="modal-section-title">🎯 Design Process</div>
-    <div class="process-steps">
-    ${p.designProcess.map((s, i) => `
-      <div class="process-step">
-        <div class="process-step-label">0${i+1}. ${s.step}</div>
-        <div style="color:var(--muted);font-size:0.8rem;">${s.desc}</div>
-      </div>
-    `).join('')}
-    </div>`;
-  }
 
   if (p.impacts && p.impacts.length) {
     html += `<div class="modal-section-title">💡 Key Results</div>
@@ -2705,11 +3708,6 @@ function showModal(p) {
       </div>
     `).join('')}
     </div>`;
-  }
-
-  if (p.tech && p.tech.length) {
-    html += `<div class="modal-section-title">🛠 Tools Used</div>
-    <div class="tech-tags" style="margin-top:0;">${makeTechTags(p.tech)}</div>`;
   }
 
   html += `
@@ -2734,21 +3732,28 @@ function showModal(p) {
   const lightboxImg = document.getElementById('image-lightbox-img');
   const selectedCaption = body.querySelector('#modal-selected-caption');
   const selectedPlay = body.querySelector('#modal-selected-play');
+  const imageDetails = body.querySelector('#modal-image-details');
   const galleryItems = body.querySelectorAll('.modal-gallery-wrap .gallery-item');
+  const updateImageSelection = (index) => {
+    if (!Number.isFinite(index) || !images[index]) return;
+    selectedImg.src = images[index].src;
+    selectedImg.alt = `${p.title} ${index + 1}`;
+    selectedCaption.textContent = images[index].caption || '';
+    if (selectedPlay) {
+      const hasGameplay = Boolean(images[index].gameplay);
+      selectedPlay.classList.toggle('hidden', !hasGameplay);
+      selectedPlay.href = images[index].gameplay || '#';
+    }
+    renderSelectedImageDetails(imageDetails, p, images[index]);
+    body.querySelectorAll('.modal-gallery-wrap .gallery-item.active').forEach(active => active.classList.remove('active'));
+    const activeItem = body.querySelector(`.modal-gallery-wrap .gallery-item[data-index="${index}"]`);
+    if (activeItem) activeItem.classList.add('active');
+  };
+
   galleryItems.forEach(item => {
     item.addEventListener('click', () => {
       const index = Number(item.dataset.index);
-      if (!Number.isFinite(index) || !images[index]) return;
-      selectedImg.src = images[index].src;
-      selectedImg.alt = `${p.title} ${index + 1}`;
-      selectedCaption.textContent = images[index].caption || '';
-      if (selectedPlay) {
-        const hasGameplay = Boolean(images[index].gameplay);
-        selectedPlay.classList.toggle('hidden', !hasGameplay);
-        selectedPlay.href = images[index].gameplay || '#';
-      }
-      body.querySelectorAll('.modal-gallery-wrap .gallery-item.active').forEach(active => active.classList.remove('active'));
-      item.classList.add('active');
+      updateImageSelection(index);
     });
   });
 
@@ -2761,6 +3766,7 @@ function showModal(p) {
     });
   }
 
+  if (images.length) updateImageSelection(0);
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -2893,7 +3899,7 @@ function initReveal() {
    ACTIVE NAV ON SCROLL
 ═══════════════════════════════════════════════════════════ */
 function initNavScroll() {
-  const sections = ['hero','about','highlights','skills','projects','contact'];
+  const sections = ['hero','about','highlights','projects','skills','contact'];
   const links = document.querySelectorAll('.nav-links a');
 
   const observer = new IntersectionObserver((entries) => {
